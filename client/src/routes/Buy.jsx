@@ -26,6 +26,7 @@ const Buy = () => {
   const [hours, setHours] = useState([])
   const [searchResults, setSearchResults] = useState([])
   const API_URL = process.env.REACT_APP_BACKEND_URL;
+  console.log(API_URL)
 
   useEffect(() => {
     const fetchEquipments = async () => {
