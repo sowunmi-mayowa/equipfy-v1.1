@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "render-postbuild": "npm install --prefix client --production=false && cd client && npm run build",
+    "render-postbuild": "cd client && npm install --production=false && npm run build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
