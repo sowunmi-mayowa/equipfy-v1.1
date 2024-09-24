@@ -22,11 +22,12 @@ const BuyCategories = () => {
     const [error, setError] = useState()
     const [loading, setLoading] = useState(true)
     const navigate = useNavigate();
+    const API_URL = process.env.REACT_APP_BACKEND_URL
 
     useEffect(() => {
       const fetchCategoryData = async() => {
         try{
-          const response = await fetch(`http://localhost:3000/equipments/byCategory/${category}`)
+          const response = await fetch(`${API_URL}/${category}`)
           if(!response.ok){
             console.log("Equipments not found");
             return;
