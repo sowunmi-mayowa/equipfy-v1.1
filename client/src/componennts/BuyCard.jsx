@@ -56,7 +56,7 @@ const BuyCard = ({img1, img2, img3, img4, img5, name, hours, link, location, pri
             </div>
             <div className='flex flex-col gap-4 mt-4 lg:flex-row'>
                 <Dialog.Root>
-                    <Dialog.Trigger className='mt-2  bg-eBlack text-white px-4 py-2 capitalize font-aeonik text-[10px] sm:text-sm lg:text-base flex gap-1 sm:gap-2 items-center justify-center font-bold '>Buy Now<FiArrowUpRight className='text-lg sm:text-xl' /> </Dialog.Trigger>
+                    <Dialog.Trigger className='w-full mt-2  bg-eBlack text-white px-4 py-2 capitalize font-aeonik text-[10px] sm:text-sm lg:text-base flex gap-1 sm:gap-2 items-center justify-center font-bold '>Buy Now<FiArrowUpRight className='text-lg sm:text-xl' /> </Dialog.Trigger>
                     <Dialog.Portal>
                         <Dialog.Overlay className='fixed inset-0  backdrop-filter backdrop-blur-sm' /> 
                         <Dialog.Content>
@@ -69,8 +69,8 @@ const BuyCard = ({img1, img2, img3, img4, img5, name, hours, link, location, pri
                         <PopupForm  onClose={closePopup} />
                     </div>
                 ): "" } */}
-            <Link to="/loan-form">
-                <button className='mt-2 border-[1px] border-eBlack px-4 py-2 capitalize font-aeonik text-[10px] sm:text-sm lg:text-base flex gap-1 sm:gap-2 items-center justify-center font-bold'>Apply for Loan</button>
+            <Link to="/loan-form" className='w-full'>
+                <button className='w-full mt-2 border-[1px] border-eBlack px-4 py-2 capitalize font-aeonik text-[10px] sm:text-sm lg:text-base flex gap-1 sm:gap-2 items-center justify-center font-bold'>Apply for Loan</button>
             </Link>
             </div>
         </div>

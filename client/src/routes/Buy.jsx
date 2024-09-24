@@ -143,7 +143,7 @@ const Buy = () => {
       <div className='mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl'>
         <Search onSearch={handleSearchResults} onPriceResult={priceResult} onHoursResult={hoursResult} onError={handleErrors} />
         <Hr />
-        <div className='flex flex-col flex-wrap gap-6 lg:gap-8 md:flex-row'>
+        <div className='flex flex-col md:flex-wrap gap-6 lg:gap-8 md:flex-row'>
         {
           error ? (
             <div className='flex items-center justify-center w-full text-center'>
