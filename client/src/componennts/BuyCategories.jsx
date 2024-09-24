@@ -27,7 +27,7 @@ const BuyCategories = () => {
     useEffect(() => {
       const fetchCategoryData = async() => {
         try{
-          const response = await fetch(`${API_URL}/${category}`)
+          const response = await fetch(`${API_URL}/equipments/byCategory/${category}`)
           if(!response.ok){
             console.log("Equipments not found");
             return;

@@ -11,6 +11,7 @@ const Search = ({ onSearch, onHoursResult, onPriceResult, onError }) => {
   const [priceValue, setPriceValue] = useState([0, 1000000])
   const [years, setYears] = useState([])
   const navigate = useNavigate()
+  const API_URL = process.env.REACT_APP_BACKEND_URL
 
   const categories = [
     { alt: 'Cold Planner', category: 'cold-planner'},
@@ -44,7 +45,7 @@ const Search = ({ onSearch, onHoursResult, onPriceResult, onError }) => {
   const search = async (e) => {
     e.preventDefault()
     try{
-      const response = await fetch(`http://localhost:3000/equipments/byName/${text}`)
+      const response = await fetch(`${API_URL}/equipments/byName/${text}`)
   
       if(!response.ok){
         onError("Equipment Not Found")
@@ -68,7 +69,7 @@ const Search = ({ onSearch, onHoursResult, onPriceResult, onError }) => {
   useEffect(() => {
     const fetchByPrice = async() => {
       try{
-        const response = await fetch(`http://localhost:3000/equipments/byPrice/${priceValue[0]}/${priceValue[1]}`)
+        const response = await fetch(`${API_URL}/equipments/byPrice/${priceValue[0]}/${priceValue[1]}`)
 
         const data = await response.json()
         onPriceResult(data)
@@ -86,7 +87,7 @@ const Search = ({ onSearch, onHoursResult, onPriceResult, onError }) => {
   useEffect(() => {
     const fetchByHours = async () => {
       try{
-        const response = await fetch(`http://localhost:3000/equipments/byHours/${sliderValue[0]}/${sliderValue[1]}`)
+        const response = await fetch(`${API_URL}/equipments/byHours/${sliderValue[0]}/${sliderValue[1]}`)
         
         const data = await response.json()
         onHoursResult(data)
