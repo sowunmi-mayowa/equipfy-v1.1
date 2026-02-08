@@ -8,7 +8,7 @@ const Sales = () => {
       <div>
         {/* for buyers */}
         <h3 className="font-plex text-xl md:text-2xl lg:text-[40px] capitalize font-semibold lg:mb-4">
-          for buyers
+          For buyers
         </h3>
         <p className="text-[#747474] font-aeonik font-medium text-sm md:text-base max-w-[200px] md:max-w-lg inline-block md:block">
           Stop gambling with your project capital. Get the machine you actually
