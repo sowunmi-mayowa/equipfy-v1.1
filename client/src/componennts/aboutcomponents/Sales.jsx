@@ -15,9 +15,9 @@ const Sales = () => {
           paid for.
         </p>
         <div className="flex flex-wrap items-center justify-between gap-4 my-8 lg:flex-nowrap lg:gap-10 ">
-          <div className="bg-[#F7F7F6] p-4 h-[200px] w-full lg:w-[387px]">
-            <div className="flex gap-6">
-              <div className="w-20">
+          <div className="bg-[#F7F7F6] p-4 w-full lg:w-[387px] md:h-[250px] ">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-6">
+              <div className="w-8">
                 <img src={folderIcon} alt="" className="w-full h-full" />
               </div>
               <p className="text-xl font-semibold font-plex ">
@@ -33,9 +33,11 @@ const Sales = () => {
               </p>
             </div>
           </div>
-          <div className="bg-[#F7F7F6] p-4 h-[200px] w-full lg:w-[387px]">
-            <div className="flex gap-6">
-              <img src={shieldIcon} alt="" />
+          <div className="bg-[#F7F7F6] p-4  w-full lg:w-[387px] md:h-[250px] ">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-6">
+              <div className="w-8">
+                <img src={shieldIcon} alt="" className="w-full h-full" />
+              </div>
               <p className="text-xl font-semibold font-plex ">
                 Verified Technical Data
               </p>
@@ -48,9 +50,11 @@ const Sales = () => {
               </p>
             </div>
           </div>
-          <div className="bg-[#F7F7F6] p-4 h-[200px] w-full lg:w-[387px]">
-            <div className="flex gap-6">
-              <img src={dollarIcon} alt="" />
+          <div className="bg-[#F7F7F6] p-4  w-full lg:w-[387px] md:h-[250px] ">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-6">
+              <div className="w-8">
+                <img src={dollarIcon} alt="" className="w-full h-full" />
+              </div>
               <p className="text-xl font-semibold font-plex ">
                 Secure Escrow Protection
               </p>
