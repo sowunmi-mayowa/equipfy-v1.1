@@ -17,13 +17,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useEffect } from "react";
 import BuyCategories from "./componennts/BuyCategories";
 import Home from "./componennts/Home";
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import EquipmentDetails from "./pages/EquipmentDetails";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +27,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route path="/about" element={<About />} />
+        <Route path="/equipment/:id" element={<EquipmentDetails />} />
         <Route path="/" element={<Home />} />
         <Route path="/buy">
           <Route path="/buy" element={<Buy />} />

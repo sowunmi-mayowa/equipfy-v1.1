@@ -24,7 +24,7 @@ if (app.get("env") == "production") {
 } else {
   app.use(morgan("dev"));
 }
-app.use("/api/equipments", require("./routes/equipments"));
+app.use("/api", require("./routes/equipments"));
 
 //mongoose connection
 mongoose

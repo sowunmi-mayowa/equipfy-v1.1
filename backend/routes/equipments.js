@@ -1,20 +1,22 @@
 const express = require("express");
 const { postEmail } = require("../controllers/emailController");
 const {
-  getEquipments,
   createEquipments,
-  getEquipment,
   getEquipmentsCategory,
   getEquipmentsByName,
   getEquipmentsByHours,
   getEquipmentsByPrices,
 } = require("../controllers/equipmentController");
+const {
+  getEquipments,
+  getEquipment,
+} = require("../controllers/newEquipmentsController");
 
 const router = express.Router();
 
-router.get("/", getEquipments);
+router.get("/equipments", getEquipments);
 
-router.get("/byId/:id", getEquipment);
+router.get("/equipment/:id", getEquipment);
 
 router.get("/byCategory/:type", getEquipmentsCategory);
 

@@ -64,13 +64,9 @@ const nigerianStates = [
 
 const Buy = () => {
   const [categoryData, setCategoryData] = useState([]);
-  const [error, setError] = useState();
-  const [loading, setLoading] = useState(true);
   const [price, setPrice] = useState([]);
   const [hours, setHours] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
-  const API_URL = process.env.REACT_APP_BACKEND_URL;
-  console.log(API_URL);
 
   const {
     data: equiptmentsData,
@@ -79,152 +75,28 @@ const Buy = () => {
   } = useGetAllEquipments();
   console.log("equips", equiptmentsData);
 
-  useEffect(() => {
-    const fetchEquipments = async () => {
-      try {
-        const response = await fetch(`${API_URL}/equipments`);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        setCategoryData(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchEquipments();
-  }, []);
-
-  let result;
-  const isLoading =
-    loading ||
-    (hours.length === 0 && price.length === 0 && searchResults.length === 0);
-
-  if (isLoading) {
-    result = (
-      <div className="flex items-center justify-center w-full">
-        <Loader />
-      </div>
-    );
-  } else {
-    result = categoryData.map((data) => (
-      <div key={data._id}>
-        <BuyCard
-          name={data.name}
-          price={`$${data.price}`}
-          location={
-            nigerianStates[Math.floor(Math.random() * nigerianStates.length)] +
-            ", NIgeria"
-          }
-          hours={data.hours}
-          img1={data.imageUrls[1]}
-          img2={data.imageUrls[2]}
-          img3={data.imageUrls[3]}
-          img5={data.imageUrls[5]}
-          nairaPrice={"#" + data.price * 855}
-        />
-      </div>
-    ));
-  }
-  if (price.length > 0) {
-    result = price.map((data) => (
-      <div key={data._id}>
-        <BuyCard
-          name={data.name}
-          price={`$${data.price}`}
-          location={
-            nigerianStates[Math.floor(Math.random() * nigerianStates.length)] +
-            ", NIgeria"
-          }
-          hours={data.hours}
-          img1={data.imageUrls[1]}
-          img2={data.imageUrls[2]}
-          img3={data.imageUrls[3]}
-          img5={data.imageUrls[5]}
-          nairaPrice={"#" + data.price * 855}
-        />
-      </div>
-    ));
-  }
-  if (hours.length > 0) {
-    result = hours.map((data) => (
-      <div key={data._id}>
-        <BuyCard
-          name={data.name}
-          price={`$${data.price}`}
-          location={
-            nigerianStates[Math.floor(Math.random() * nigerianStates.length)] +
-            ", NIgeria"
-          }
-          hours={data.hours}
-          img1={data.imageUrls[1]}
-          img2={data.imageUrls[2]}
-          img3={data.imageUrls[3]}
-          img5={data.imageUrls[5]}
-          nairaPrice={"#" + data.price * 855}
-        />
-      </div>
-    ));
-  }
-
-  if (searchResults.length > 0) {
-    result = searchResults.map((data) => (
-      <div key={data._id}>
-        <BuyCard
-          name={data.name}
-          price={`$${data.price}`}
-          location={
-            nigerianStates[Math.floor(Math.random() * nigerianStates.length)] +
-            ", NIgeria"
-          }
-          hours={data.hours}
-          img1={data.imageUrls[1]}
-          img2={data.imageUrls[2]}
-          img3={data.imageUrls[3]}
-          img5={data.imageUrls[5]}
-          nairaPrice={"#" + data.price * 855}
-        />
-      </div>
-    ));
-  }
-
-  const handleSearchResults = (results) => {
-    setSearchResults(results);
-    setLoading(false);
-  };
-  console.log(searchResults);
-
-  const hoursResult = (gethours) => {
-    setHours(gethours);
-  };
-  const priceResult = (getprice) => {
-    setPrice(getprice);
+  const handleSearchResults = (data) => {
+    setSearchResults(data);
   };
 
-  const handleErrors = (error) => {
-    setError(error.message || error);
-  };
-  console.log("price", price);
-  console.log("hours", hours);
   return (
     <div>
       <div className="mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
-        <Search
-          onSearch={handleSearchResults}
-          onPriceResult={priceResult}
-          onHoursResult={hoursResult}
-          onError={handleErrors}
-        />
+        <Search onSearch={handleSearchResults} />
         <Hr />
         <div className="flex flex-col md:flex-wrap gap-6 lg:gap-8 md:flex-row">
-          {error ? (
+          {equiptmentsError ? (
             <div className="flex items-center justify-center w-full text-center">
               <p className="text-red-400 font-aeonik">{error}</p>
             </div>
+          ) : equiptmentsLoading ? (
+            <div className="flex items-center justify-center w-full text-center">
+              <Loader />
+            </div>
           ) : (
-            result
+            equiptmentsData?.map((equiptment) => (
+              <BuyCard key={equiptment._id} equipment={equiptment} />
+            ))
           )}
         </div>
         <Hr />
