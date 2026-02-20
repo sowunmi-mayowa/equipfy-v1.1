@@ -81,10 +81,10 @@ const Listing = () => {
           {rest.map((item, idx) => (
             <div
               key={item?._id || idx}
-              className="flex gap-4 p-4 bg-[#F7F7F6] h-[48%]"
+              className="flex gap-4 p-4 flex-col md:flex-row bg-[#F7F7F6] h-[48%]"
             >
               {/* Image wrapper — fixed width so it never squishes the text */}
-              <div className="w-[180px] sm:w-[220px] flex-shrink-0 overflow-hidden">
+              <div className="sm:w-[220px] flex-shrink-0 overflow-hidden">
                 <img
                   src={item?.all_images?.[0] || listImg2}
                   className="w-full h-full object-cover"
@@ -114,10 +114,14 @@ const Listing = () => {
                     </div>
                   </div>
                 </div>
-                <button className="mt-2 border-2 border-eBlack px-4 py-2 capitalize font-aeonik text-[10px] sm:text-sm lg:text-base flex gap-1 sm:gap-2 items-center justify-center font-bold self-start">
-                  Buy Now
-                  <FiArrowUpRight className="text-lg sm:text-xl" />
-                </button>
+                <div className="mt-2 md:mt-0">
+                  <ButtonBlack
+                    name={"Buy Now"}
+                    link={`/equipment/${item?._id}`}
+                    showIcon={true}
+                    variant="outlined"
+                  />
+                </div>
               </div>
             </div>
           ))}
