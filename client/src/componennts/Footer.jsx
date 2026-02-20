@@ -10,11 +10,11 @@ const Footer = () => {
   return (
     <div style={{ background: "rgba(250, 250, 250, 0.50)" }}>
       <div className=" py-12 mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
-        <div className="flex gap-4  md:items-center justify-between flex-col md:flex-row md:flex-wrap md:gap-12 lg:gap-0 lg:flex-nowrap font-aeonik capitalize">
+        <div className="flex gap-4  md:items-start justify-between flex-col md:flex-row md:flex-wrap md:gap-12 lg:gap-0 lg:flex-nowrap font-aeonik capitalize">
           <div>
             <img src={logo} alt="logo" className="w-4xl" />
           </div>
-          <div>
+          {/* <div>
             <ul>
               <li className="text-eBlack font-bold text-base mb-4">About Us</li>
               <li className="text-[#747474] text-sm font-medium mb-2">
@@ -22,32 +22,50 @@ const Footer = () => {
               </li>
               <li className="text-[#747474] text-sm font-medium">Team</li>
             </ul>
-          </div>
+          </div> */}
           <div>
             <ul>
               <li className="text-eBlack font-bold text-base mb-4">buyers</li>
               <li className="text-[#747474] text-sm font-medium mb-2">
-                Find Equipment
+                <Link to="/buy">Browse Equipment</Link>
               </li>
               <li className="text-[#747474] text-sm font-medium mb-2">
-                Apply for Loan
+                Fleet & telematics
+              </li>
+              <li className="text-[#747474] text-sm font-medium">
+                Part & Tools
+              </li>
+              <li className="text-[#747474] text-sm font-medium">Finance</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li className="text-eBlack font-bold text-base mb-4">Features</li>
+              <li className="text-[#747474] text-sm font-medium mb-2">
+                About Us
+              </li>
+              <li className="text-[#747474] text-sm font-medium mb-2">
+                Request Service
               </li>
               <li className="text-[#747474] text-sm font-medium">
                 Parts Ordering
+              </li>
+              <li className="text-[#747474] text-sm font-medium">
+                Technician Requests
               </li>
             </ul>
           </div>
           <div>
             <ul>
-              <li className="text-eBlack font-bold text-base mb-4">sellers</li>
+              <li className="text-eBlack font-bold text-base mb-4">Privacy</li>
               <li className="text-[#747474] text-sm font-medium mb-2">
-                Sell Equipment
+                Cookies
               </li>
               <li className="text-[#747474] text-sm font-medium mb-2">
-                Request Valuation
+                Privacy Policy
               </li>
               <li className="text-[#747474] text-sm font-medium">
-                Repair Services
+                Terms & Condition
               </li>
             </ul>
           </div>
@@ -57,6 +75,9 @@ const Footer = () => {
                 Contact us
               </li>
               <li className="text-[#747474] text-sm font-medium mb-2">
+                <p className="mb-2">
+                  Yaba, Lagos <br /> Call or WhatsApp us
+                </p>
                 <div className="flex items-center font-medium gap-2 ">
                   <PiPhoneThin className="text-2xl" />
                   <details>
@@ -86,14 +107,19 @@ const Footer = () => {
           </div>
         </div>
         <Hr />
-        <div className="flex md:items-center justify-end flex-col gap-4 md:flex-row md:gap-[150px] lg:gap-[200px] xl:gap-[350px]">
-          <div>
+        <div className="flex items-start md:items-center md:justify-between flex-col gap-4 md:flex-row w-full">
+          <p className="text-sm text-[#747474]">&copy; 2026</p>
+          {/* <div>
             <ul className="flex gap-2 md:gap-4 flex-col md:flex-row font-aeonik text-sm font-medium capitalize text-[#747474]">
               <li>privacy</li>
               <li>terms and condition</li>
               <li>cookies</li>
             </ul>
-          </div>
+          </div> */}
+          <p className="md:text-center text-sm text-[#747474]">
+            West Africa’s digital dealer for foreign-used equipment, parts, and
+            repairs.
+          </p>
           <div className="flex gap-2">
             <FiFacebook />
             <FiTwitter />
@@ -101,10 +127,6 @@ const Footer = () => {
             <FiYoutube />
           </div>
         </div>
-        <p className="text-center text-sm text-[#747474] mt-4">
-          Building Africa’s most trusted marketplace for heavy equipment, parts,
-          and repairs.
-        </p>
       </div>
     </div>
   );

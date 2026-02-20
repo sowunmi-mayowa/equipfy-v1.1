@@ -3,7 +3,7 @@ import { FiSearch } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import { useGetEquipmentsByCategory } from "../../api/query";
+import { useGetEquipmentsByCategory } from "../api/query";
 
 const Search = ({ onSearch, onHoursResult, onPriceResult, onError }) => {
   const [text, setText] = useState("");

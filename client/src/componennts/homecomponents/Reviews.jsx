@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const Reviews = () => {
-  const sliderRef = useRef(null);
+  const sliderRefDesktop = useRef(null);
+  const sliderRefMobile = useRef(null);
 
   const settings = {
     dots: true,
@@ -25,14 +26,32 @@ const Reviews = () => {
     autoplay: true,
   };
   const handleNextClick = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext();
+    if (
+      sliderRefDesktop.current &&
+      typeof sliderRefDesktop.current.slickNext === "function"
+    ) {
+      sliderRefDesktop.current.slickNext();
+    }
+    if (
+      sliderRefMobile.current &&
+      typeof sliderRefMobile.current.slickNext === "function"
+    ) {
+      sliderRefMobile.current.slickNext();
     }
   };
 
   const handlePrevClick = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickPrev();
+    if (
+      sliderRefDesktop.current &&
+      typeof sliderRefDesktop.current.slickPrev === "function"
+    ) {
+      sliderRefDesktop.current.slickPrev();
+    }
+    if (
+      sliderRefMobile.current &&
+      typeof sliderRefMobile.current.slickPrev === "function"
+    ) {
+      sliderRefMobile.current.slickPrev();
     }
   };
   return (
@@ -47,25 +66,27 @@ const Reviews = () => {
             Nigeria.
           </p>
         </div>
-        <div className="flex items-center gap-2 cursor-pointer">
-          <img
-            src={prev}
-            alt=""
-            className="w-8 md:w-full"
+        <div className="flex items-center gap-2">
+          <button
             onClick={handlePrevClick}
-          />
-          <img
-            src={next}
-            alt=""
-            className="w-8 md:w-full"
+            aria-label="Previous review"
+            className="p-1"
+          >
+            <img src={prev} alt="Previous" className="w-8" />
+          </button>
+          <button
             onClick={handleNextClick}
-          />
+            aria-label="Next review"
+            className="p-1"
+          >
+            <img src={next} alt="Next" className="w-8" />
+          </button>
         </div>
       </div>
       <div className="hidden mt-6 lg:block">
-        <div className="items-center gap-4">
-          <Slider ref={sliderRef} {...settings}>
-            <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px]">
+        <div className="items-stretch gap-4">
+          <Slider ref={sliderRefDesktop} {...settings}>
+            <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px] min-h-[240px] h-full flex flex-col justify-between">
               <p className="font-aeonik text-base text-[#121212]">
                 In the South-South, equipment downtime is a project killer. I
                 was skeptical about buying a used crane from Lagos, but the
@@ -84,7 +105,7 @@ const Reviews = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px]">
+            <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px] min-h-[240px] h-full flex flex-col justify-between">
               <p className="font-aeonik text-base text-[#121212]">
                 Dealing with 'agents' in Lagos is usually a headache of inflated
                 prices and hidden faults. eQuipfy changed that for us. We
@@ -102,7 +123,7 @@ const Reviews = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px]">
+            <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px] min-h-[240px] h-full flex flex-col justify-between">
               <p className="font-aeonik text-base text-[#121212]">
                 Reliable machinery is hard to find in the North, and parts are
                 even harder. We used eQuipfy to buy a refurbished excavator for
@@ -121,7 +142,7 @@ const Reviews = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px]">
+            <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px] min-h-[240px] h-full flex flex-col justify-between">
               <p className="font-aeonik text-base text-[#121212]">
                 In the South-South, equipment downtime is a project killer. I
                 was skeptical about buying a used crane from Lagos, but the
@@ -146,8 +167,8 @@ const Reviews = () => {
       <div className="mt-4 lg:hidden">
         {" "}
         {/*mobile reviews */}
-        <Slider ref={sliderRef} {...mobileSettings}>
-          <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px]">
+        <Slider ref={sliderRefMobile} {...mobileSettings}>
+          <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px] min-h-[220px] h-full flex flex-col justify-between">
             <p className="font-aeonik text-base text-[#121212]">
               In the South-South, equipment downtime is a project killer. I was
               skeptical about buying a used crane from Lagos, but the 180-point
@@ -165,7 +186,7 @@ const Reviews = () => {
               </div>
             </div>
           </div>
-          <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px]">
+          <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px] min-h-[220px] h-full flex flex-col justify-between">
             <p className="font-aeonik text-base text-[#121212]">
               Dealing with 'agents' in Lagos is usually a headache of inflated
               prices and hidden faults. eQuipfy changed that for us. We sourced
@@ -183,7 +204,7 @@ const Reviews = () => {
               </div>
             </div>
           </div>
-          <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px]">
+          <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px] min-h-[220px] h-full flex flex-col justify-between">
             <p className="font-aeonik text-base text-[#121212]">
               Reliable machinery is hard to find in the North, and parts are
               even harder. We used eQuipfy to buy a refurbished excavator for
@@ -202,7 +223,7 @@ const Reviews = () => {
               </div>
             </div>
           </div>
-          <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px]">
+          <div className="bg-[#F7F7F6] px-8 py-6 rounded-[4px] min-h-[220px] h-full flex flex-col justify-between">
             <p className="font-aeonik text-base text-[#121212]">
               In the South-South, equipment downtime is a project killer. I was
               skeptical about buying a used crane from Lagos, but the 180-point

@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Hr from "./Hr";
 import Loader from "./Loader";
 import Search from "./Search";
-import { useGetEquipmentsByCategory } from "../../api/query";
+import { useGetEquipmentsByCategory } from "../api/query";
 
 const nigerianStates = [
   "Abia",
@@ -62,8 +62,6 @@ const BuyCategories = () => {
     error: equipmentsByCategoryError,
   } = useGetEquipmentsByCategory(category);
 
-  console.log("by category", equipmentsByCategoryData);
-
   useEffect(() => {
     const fetchCategoryData = async () => {
       try {
@@ -99,7 +97,7 @@ const BuyCategories = () => {
     );
   } else {
     result = equipmentsByCategoryData.map((data) => (
-      <div key={data._id}>
+      <div key={data._id} className="h-full w-full sm:w-1/2 md:w-1/3">
         <BuyCard
           name={data.name}
           price={`$${data.price}`}
@@ -119,7 +117,7 @@ const BuyCategories = () => {
   }
   if (price.length > 0) {
     result = price.map((data) => (
-      <div key={data._id}>
+      <div key={data._id} className="h-full w-full sm:w-1/2 md:w-1/3">
         <BuyCard
           name={data.name}
           price={`$${data.price}`}
@@ -139,7 +137,7 @@ const BuyCategories = () => {
   }
   if (hours.length > 0) {
     result = hours.map((data) => (
-      <div key={data._id}>
+      <div key={data._id} className="h-full w-full sm:w-1/2 md:w-1/3">
         <BuyCard
           name={data.name}
           price={`$${data.price}`}
@@ -160,7 +158,7 @@ const BuyCategories = () => {
 
   if (searchResults.length > 0) {
     result = searchResults.map((data) => (
-      <div key={data._id}>
+      <div key={data._id} className="h-full w-full sm:w-1/2 md:w-1/3">
         <BuyCard
           name={data.name}
           price={`$${data.price}`}
@@ -181,7 +179,7 @@ const BuyCategories = () => {
 
   if (category !== "" && categoryData.length > 0) {
     result = categoryData.map((data) => (
-      <div key={data._id}>
+      <div key={data._id} className="h-full w-full sm:w-1/2 md:w-1/3">
         <BuyCard
           name={data.name}
           price={`$${data.price}`}
@@ -229,7 +227,7 @@ const BuyCategories = () => {
             <Loader />
           </div>
         ) : (
-          <div className="flex flex-col flex-wrap gap-4 lg:gap-8 md:flex-row">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8">
             {error ? (
               <div className="flex items-center justify-center w-full text-center">
                 <p className="text-red-400 font-aeonik">{error}</p>

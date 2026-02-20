@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { flag } from "../assets";
 import PopupForm from "./PopupForm";
+import { convertEURtoNGN } from "@/utils/currencyConverter";
 import * as Dialog from "@radix-ui/react-dialog";
 
 const BuyCard = ({ equipment }) => {
@@ -31,34 +32,44 @@ const BuyCard = ({ equipment }) => {
   };
 
   return (
-    <Link to={`/equipment/${equipment._id}`}>
-      <div className="font-aeonik bg-[#F7F7F6] p-4 pb-6">
+    <Link to={`/equipment/${equipment._id}`} className="block h-full">
+      <div className="font-aeonik bg-[#F7F7F6] p-4 pb-6 h-full flex flex-col justify-between">
         <div ref={popUpRef}>
-          <div className="max-w-xs">
+          <div className="w-full h-40 overflow-hidden">
             <Slider {...settings}>
               {(equipment.all_images || []).map((img, index) => (
-                <LazyLoad key={index} image={img} alt={equipment.name} />
+                <div key={index} className="w-full h-40">
+                  <LazyLoad
+                    image={img}
+                    alt={equipment.name}
+                    className="w-full h-40 object-cover"
+                  />
+                </div>
               ))}
             </Slider>
           </div>
           <div>
             <div className="my-4 font-aeonik">
-              <h3 className="max-w-xs text-base font-bold lg:text-xl">
-                {equipment.name}
-              </h3>
-              <p>{equipment.hours ?? "-"} Hours</p>
-              <div className="flex items-end gap-2">
-                <p className="mt-4 text-sm font-bold lg:text-base">
-                  {equipment.price}
+              <div className="flex justify-between items-center gap-2">
+                <h3 className="text-base font-bold lg:text-xl flex-1 truncate">
+                  {equipment.name}
+                </h3>
+                <p className="flex-shrink-0 text-sm">
+                  {equipment.hours ?? "-"} Hours
                 </p>
-                <div className="flex items-end gap-2">
+              </div>
+              <div className="flex items-end gap-2">
+                <ConvertedPrice
+                  amount={equipment.average_market_price ?? equipment.price}
+                />
+                {/* <div className="flex items-end gap-2">
                   <img
                     src={flag}
                     alt="Nigerian flag icon"
                     className="w-4 h-4"
                   />
                   <p className="mt-4 text-sm font-bold lg:text-base"> </p>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="flex flex-col gap-4">
@@ -75,7 +86,7 @@ const BuyCard = ({ equipment }) => {
                 </span>
               </div>
             </div>
-            <div className="flex flex-col gap-4 mt-4 lg:flex-row">
+            {/* <div className="flex flex-col gap-4 mt-4 lg:flex-row">
               <Dialog.Root>
                 <Dialog.Trigger className="w-full mt-2  bg-eBlack text-white px-4 py-2 capitalize font-aeonik text-[10px] sm:text-sm lg:text-base flex gap-1 sm:gap-2 items-center justify-center font-bold ">
                   Buy Now
@@ -92,13 +103,13 @@ const BuyCard = ({ equipment }) => {
                     <div className='absolute inset-0 flex items-center justify-center w-screen h-full red-500'>
                         <PopupForm  onClose={closePopup} />
                     </div>
-                ): "" }*/}
+                ): "" } here
               <Link to="/loan-form" className="w-full">
                 <button className="w-full mt-2 border-[1px] border-eBlack px-4 py-2 capitalize font-aeonik text-[10px] sm:text-sm lg:text-base flex gap-1 sm:gap-2 items-center justify-center font-bold">
                   Apply for Loan
                 </button>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -107,3 +118,29 @@ const BuyCard = ({ equipment }) => {
 };
 
 export default React.memo(BuyCard);
+
+const ConvertedPrice = ({ amount }) => {
+  const [price, setPrice] = useState("₦0.00");
+
+  useEffect(() => {
+    let mounted = true;
+    const doConvert = async () => {
+      if (amount === null || amount === undefined || amount === "") {
+        setPrice("₦0.00");
+        return;
+      }
+      try {
+        const result = await convertEURtoNGN(amount);
+        if (mounted) setPrice(result);
+      } catch (e) {
+        if (mounted) setPrice("₦0.00");
+      }
+    };
+    doConvert();
+    return () => {
+      mounted = false;
+    };
+  }, [amount]);
+
+  return <p className="mt-4 text-sm font-bold lg:text-base">{price}</p>;
+};

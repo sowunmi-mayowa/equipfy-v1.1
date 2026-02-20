@@ -1,24 +1,28 @@
-import React from 'react'
-import Categories from './aboutcomponents/Categories'
-import Hero from './aboutcomponents/Hero'
-import Listing from './aboutcomponents/Listing'
-import Newsletter from './aboutcomponents/Newsletter'
-import Reviews from './aboutcomponents/Reviews'
-import Sales from './aboutcomponents/Sales'
-import Footer from './Footer'
+import React from "react";
+import Categories from "./homecomponents/Categories";
+import Hero from "./homecomponents/Hero";
+import Listing from "./homecomponents/Listing";
+import Newsletter from "./homecomponents/Newsletter";
+import Reviews from "./homecomponents/Reviews";
+import Sales from "./homecomponents/Sales";
+import Footer from "./Footer";
+import Parts from "./homecomponents/Parts";
+import Confidence from "./homecomponents/Confidence";
 
 const About = () => {
   return (
     <div>
       <Hero />
-      <Sales />
+      <Confidence />
+      {/* <Sales /> */}
       <Categories />
+      <Parts />
       <Listing />
       <Reviews />
       <Newsletter />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

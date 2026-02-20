@@ -1,5 +1,5 @@
 import React from "react";
-import Newsletter from "../componennts/aboutcomponents/Newsletter";
+import Newsletter from "../componennts/homecomponents/Newsletter";
 import Footer from "../componennts/Footer";
 import Hr from "../componennts/Hr";
 import {
@@ -21,7 +21,7 @@ import Search from "../componennts/Search";
 import { useEffect } from "react";
 import { useState } from "react";
 import Loader from "../componennts/Loader";
-import { useGetAllEquipments } from "../../api/query";
+import { useGetAllEquipments } from "../api/query";
 
 const nigerianStates = [
   "Abia",
@@ -84,7 +84,7 @@ const Buy = () => {
       <div className="mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
         <Search onSearch={handleSearchResults} />
         <Hr />
-        <div className="flex flex-col md:flex-wrap gap-6 lg:gap-8 md:flex-row">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
           {equiptmentsError ? (
             <div className="flex items-center justify-center w-full text-center">
               <p className="text-red-400 font-aeonik">{error}</p>
@@ -95,7 +95,9 @@ const Buy = () => {
             </div>
           ) : (
             equiptmentsData?.map((equiptment) => (
-              <BuyCard key={equiptment._id} equipment={equiptment} />
+              <div key={equiptment._id} className="h-full">
+                <BuyCard equipment={equiptment} />
+              </div>
             ))
           )}
         </div>

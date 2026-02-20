@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useGetEquipment } from "../../api/query";
+import { convertEURtoNGN } from "@/utils/currencyConverter";
+import { useGetEquipment } from "../api/query";
 import { useParams } from "react-router-dom";
 import {
   FaPlus,
@@ -8,24 +9,25 @@ import {
   FaEye,
   FaChevronLeft,
   FaChevronRight,
-  FaArrowUp,
+  FaAngleUp,
 } from "react-icons/fa";
 import * as Tabs from "@radix-ui/react-tabs";
 import Hr from "../componennts/Hr";
 import Footer from "../componennts/Footer";
 import PopupForm from "../componennts/PopupForm";
 import * as Dialog from "@radix-ui/react-dialog";
-import calendarIcon from "../../public/icons/calendar.svg";
-import Weight from "../../public/icons/weight.svg";
-import Clock from "../../public/icons/clock.svg";
-import Location from "../../public/icons/location.svg";
-import Dimension from "../../public/icons/dimension.svg";
-import Condition from "../../public/icons/condition.svg";
-import Keypad from "../../public/icons/keypad.svg";
-import ButtonBlack from "../componennts/ButtonBlack";
-import VerifiedYellow from "../../public/icons/verified-yellow.svg";
-import Check from "../../public/icons/check.svg";
-
+import {
+  Calendar,
+  Weight,
+  Clock,
+  Location,
+  Dimension,
+  Condition,
+  Keypad,
+  VerifiedYellow,
+  Check,
+} from "@/assets/";
+import ButtonBlack from "@/componennts/ButtonBlack";
 const EquipmentDetails = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useGetEquipment(id);
@@ -226,7 +228,7 @@ const EquipmentDetails = () => {
   return (
     <div>
       {/* Breadcrumb */}
-      <div className="px-8 py-4 md:px-12 ">
+      <div className=" py-4 mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl ">
         <p className="text-sm text-[#747474] font-aeonik">
           Home {">"} Explore Equipment {">"} {equipment.category} {">"}{" "}
           {equipment.name}
@@ -276,16 +278,17 @@ const EquipmentDetails = () => {
             <h1 className=" text-2xl md:text-3xl font-bold text-eBlack mb-2 font-aeonik">
               {equipment.name}
             </h1>
-            <p className="font-aeonik text-2xl font-bold text-eBlack mb-6">
-              {equipment.currency} {equipment.price.toLocaleString()}
-            </p>
+            <ConvertedPrice
+              amount={equipment.average_market_price ?? equipment.price}
+              currency={equipment.currency}
+            />
 
             {/* Specs Badges */}
             <div className="grid gap-3 mb-8 border border-dashed border-gray-300 p-4 rounded-lg">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs items-center">
                 <div className="flex items-center gap-2 w-full py-2">
                   <img
-                    src={calendarIcon}
+                    src={Calendar}
                     alt="Calendar"
                     className="w-5 h-5 flex-shrink-0"
                   />
@@ -410,8 +413,8 @@ const EquipmentDetails = () => {
               How it Works
             </h3>
 
-            <FaArrowUp
-              className={`text-eYellow w-6 h-6 mb-4 transform transition-transform ${
+            <FaAngleUp
+              className={` w-6 h-6 mb-4 transform transition-transform ${
                 howOpen ? "rotate-180" : ""
               }`}
             />
@@ -570,3 +573,42 @@ const EquipmentDetails = () => {
 };
 
 export default EquipmentDetails;
+
+const ConvertedPrice = ({ amount, currency }) => {
+  const [price, setPrice] = useState(
+    amount ? `${currency} ${Number(amount).toLocaleString()}` : "",
+  );
+
+  useEffect(() => {
+    let mounted = true;
+    const doConvert = async () => {
+      if (amount === null || amount === undefined || amount === "") {
+        if (mounted) setPrice("");
+        return;
+      }
+
+      // If the source currency is EUR, convert to NGN; otherwise show native price
+      const normalized = String(currency || "").toUpperCase();
+      if (normalized === "EUR" || normalized === "€") {
+        try {
+          const result = await convertEURtoNGN(amount);
+          if (mounted) setPrice(result);
+        } catch (e) {
+          if (mounted)
+            setPrice(`${currency} ${Number(amount).toLocaleString()}`);
+        }
+      } else {
+        if (mounted) setPrice(`${currency} ${Number(amount).toLocaleString()}`);
+      }
+    };
+
+    doConvert();
+    return () => {
+      mounted = false;
+    };
+  }, [amount, currency]);
+
+  return (
+    <p className="font-aeonik text-2xl font-bold text-eBlack mb-6">{price}</p>
+  );
+};

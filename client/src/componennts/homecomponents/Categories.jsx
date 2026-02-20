@@ -20,6 +20,7 @@ import {
 import Hr from "../Hr";
 import LazyLoad from "../LazyLoad";
 import { Link } from "react-router-dom";
+import ButtonBlack from "../ButtonBlack";
 
 const Categories = () => {
   const categories = [
@@ -59,7 +60,7 @@ const Categories = () => {
         </p>
       </div>
       <div className="flex flex-wrap gap-6 md:gap-4 justify-between md:justify-center lg:justify-between items-center">
-        {categories.map(({ image, alt, category }) => (
+        {categories.slice(0, 8).map(({ image, alt, category }) => (
           <Link to={`/buy/equipments/${category}`} key={category}>
             <div className="flex gap-2 text-center lg:gap-5 flex-col items-center justify-center p-8 border-[1px] border-[rgba(116, 116, 116, 0.20)] w-[140px] h-[170px] xs:w-[167px] sm:h-[167px] md:w-[200px] md:h-[200px] xl:w-[265px] xl:h-[265px]">
               <LazyLoad image={image} alt={alt} />
@@ -69,6 +70,15 @@ const Categories = () => {
             </div>
           </Link>
         ))}
+      </div>
+
+      <div className="flex justify-center mt-6 mx-auto">
+        <ButtonBlack
+          name={"See More"}
+          showIcon={true}
+          variant="outlined"
+          link={"/buy"}
+        />
       </div>
       <Hr />
     </div>

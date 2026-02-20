@@ -57,5 +57,97 @@ import nannim from "./nannim.png";
 import grace from "./grace.png";
 import flag from "./flag.png";
 import loanMobileImage from "./loanMobileImage.png";
+import Calendar from "@/assets/icons/calendar.svg";
+import Location from "@/assets/icons/location.svg";
+import Check from "@/assets/icons/check.svg";
+import Clock from "@/assets/icons/clock.svg";
+import Weight from "@/assets/icons/weight.svg";
+import Dimension from "@/assets/icons/dimension.svg";
+import Condition from "@/assets/icons/condition.svg";
+import Keypad from "@/assets/icons/keypad.svg";
+import VerifiedYellow from "@/assets/icons/verified-yellow.svg";
+import PartImg1 from "@/assets/partsImg1.png";
+import PartImg2 from "@/assets/partsImg2.png";
+import PartImg3 from "@/assets/partsImg3.png";
+import Notes from "@/assets/icons/notes.svg";
+import Worker from "@/assets/icons/worker.svg";
+import Cubes from "@/assets/icons/cubes.svg";
+import ShieldCheck from "@/assets/icons/shieldCheck.svg";
 
-export {heroImg, logo, stroke, logo1, logo2, dollarIcon, folderIcon, shieldIcon, cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9, cat10, cat11, cat12, cat13, cat14, cat15, cat16, listImg1, listImg2, prev, next, buyImg1, buyImg2, buyImg3, buyImg4, buyImg5, buyImg6, buyImg7, buyImg8, buyImg9, buyImg10, buyImg11, buyImg12, searchImg1, sellHeroImg, sideSell, loanHeroImg, lowHeroImg, aboutHero, heartIcon, userIcon, stockIcon, alex, kenny, triumph, bukharee, mayowa, samson, nannim, grace, flag, loanMobileImage }
+export {
+  heroImg,
+  logo,
+  stroke,
+  logo1,
+  logo2,
+  dollarIcon,
+  folderIcon,
+  shieldIcon,
+  cat1,
+  cat2,
+  cat3,
+  cat4,
+  cat5,
+  cat6,
+  cat7,
+  cat8,
+  cat9,
+  cat10,
+  cat11,
+  cat12,
+  cat13,
+  cat14,
+  cat15,
+  cat16,
+  listImg1,
+  listImg2,
+  prev,
+  next,
+  buyImg1,
+  buyImg2,
+  buyImg3,
+  buyImg4,
+  buyImg5,
+  buyImg6,
+  buyImg7,
+  buyImg8,
+  buyImg9,
+  buyImg10,
+  buyImg11,
+  buyImg12,
+  searchImg1,
+  sellHeroImg,
+  sideSell,
+  loanHeroImg,
+  lowHeroImg,
+  aboutHero,
+  heartIcon,
+  userIcon,
+  stockIcon,
+  alex,
+  kenny,
+  triumph,
+  bukharee,
+  mayowa,
+  samson,
+  nannim,
+  grace,
+  flag,
+  loanMobileImage,
+  Calendar,
+  Location,
+  Check,
+  Clock,
+  Weight,
+  Dimension,
+  Condition,
+  Keypad,
+  VerifiedYellow,
+  PartImg1,
+  PartImg2,
+  PartImg3,
+  Notes,
+  Worker,
+  Cubes,
+  ShieldCheck,
+};
