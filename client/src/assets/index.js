@@ -67,7 +67,7 @@ import Condition from "@/assets/icons/condition.svg";
 import Keypad from "@/assets/icons/keypad.svg";
 import VerifiedYellow from "@/assets/icons/verified-yellow.svg";
 import PartImg1 from "@/assets/partsImg1.png";
-import PartImg2 from "@/assets/partsImg2.png";
+import PartImg2 from "@/assets/partsimg2.png";
 import PartImg3 from "@/assets/partsImg3.png";
 import Notes from "@/assets/icons/notes.svg";
 import Worker from "@/assets/icons/worker.svg";
