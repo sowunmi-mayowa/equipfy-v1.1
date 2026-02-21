@@ -112,6 +112,7 @@ const EquipmentDetails = () => {
   }
 
   const equipment = data.equipment;
+  console.log("Equipment details:", equipment?.dimensions);
   const locationText =
     equipment.seller_location || equipment.sold_from || "Unknown";
   const images = equipment.all_images || [];
@@ -300,7 +301,7 @@ const EquipmentDetails = () => {
                     alt="Weight"
                     className="w-5 h-5 flex-shrink-0"
                   />
-                  <p className="truncate">Weight {equipment?.weight}</p>
+                  <p className="truncate">Weight {equipment?.weight + " kg"}</p>
                 </div>
                 <div className="flex items-center gap-2 w-full py-2">
                   <img
@@ -322,7 +323,15 @@ const EquipmentDetails = () => {
               <div className="grid md:grid-cols-2 text-xs">
                 <div className="flex items-center gap-2 w-full mb-2 md:mb-0">
                   <img src={Dimension} alt="dimension" className="w-5 h-5" />
-                  <p>Dimension {equipment?.dimensions}</p>
+                  <p>
+                    Dimension{"(L × W × H) "}
+                    {equipment?.dimensions?.transport_length_m +
+                      " x " +
+                      equipment?.dimensions?.transport_width_m +
+                      " x " +
+                      equipment?.dimensions?.transport_height_m +
+                      " m"}
+                  </p>
                 </div>
                 <div className="flex items-center gap-2 w-full">
                   <img

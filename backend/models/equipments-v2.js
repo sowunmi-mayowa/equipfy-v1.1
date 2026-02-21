@@ -11,9 +11,13 @@ const equipmentSchema = new Schema(
     manufacturer: { type: String, trim: true, index: true },
     model: { type: String, trim: true },
     year: { type: Number, index: true },
-    weight: { type: String }, // e.g. "17500 kg"
-    hours: { type: Number }, // hourmeter reading as a number
-    dimensions: { type: String }, // e.g. "9.8 × 2.6 × 3.2 m"
+    weight: { type: Number, index: true }, // e.g. "17500 kg"
+    hours: { type: Number, index: true }, // hourmeter reading as a number
+    dimensions: {
+      transport_length_m: { type: Number, index: true },
+      transport_width_m: { type: Number, index: true },
+      transport_height_m: { type: Number, index: true },
+    }, // e.g. "9.8 × 2.6 × 3.2 m"
     serial_number: { type: String, trim: true },
     condition: {
       type: String,
@@ -22,7 +26,7 @@ const equipmentSchema = new Schema(
     },
     sold_from: { type: String },
     description: { type: String },
-    price: { type: Number }, // stored as number, e.g. 121000
+    price: { type: Number, index: true }, // stored as number, e.g. 121000
     currency: { type: String, default: "EUR" },
     price_type: { type: String }, // e.g. "Buy Now Price"
     average_market_price: { type: Number },
