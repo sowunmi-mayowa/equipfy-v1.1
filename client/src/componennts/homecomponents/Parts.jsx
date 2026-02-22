@@ -51,7 +51,7 @@ const Parts = () => {
           <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
             Parts & Serivces
           </h3>
-          <p className="font-light text-gray-500 max-w-lg mt-4 text-center mx-auto">
+          <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
             End downtime. From quarries and mines to oil & gas and construction
             sites, order parts and request trusted technicians when you need
             them.
@@ -77,9 +77,9 @@ const Parts = () => {
       <div>
         <div className="flex justify-center items-center flex-col mb-8 gap-2">
           <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
-            Parts & Categories
+            Parts Categories
           </h3>
-          <p className="font-light text-gray-500 max-w-xs mt-4 text-center mx-auto">
+          <p className="font-light text-gray-500 max-w-xs md:mt-4 text-center mx-auto">
             Browse by category. Order parts or request a technician for your
             machine.
           </p>

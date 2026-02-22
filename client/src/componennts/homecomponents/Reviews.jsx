@@ -56,14 +56,14 @@ const Reviews = () => {
   };
   return (
     <div className="mx-8  md:mx-12 xl:mx-auto xl:max-w-6xl">
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-xl md:text-2xl lg:tetx-[40px] font-plex font-semibold capitalize">
-            What Our Clients Are Saying
-          </p>
-          <p className="text-[#747474] font-aeonik font-medium text-sm md:text-base max-w-[200px] md:max-w-lg inline-block md:block">
+      <div>
+        <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
+          <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
+            What Our Clients are Saying
+          </h3>
+          <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
             Real stories of transparency and trust from project sites across
-            Nigeria.
+            West Africa.
           </p>
         </div>
         <div className="flex items-center gap-2">

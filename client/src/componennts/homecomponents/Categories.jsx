@@ -51,12 +51,13 @@ const Categories = () => {
   ];
   return (
     <div className="mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
-      <div className="mb-4">
-        <h3 className="font-plex text-xl md:text-2xl lg:text-[40px] capitalize font-semibold lg:mb-4">
-          Shop by Category
+      <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
+        <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
+          Browse all Categories
         </h3>
-        <p className="text-[#747474] font-aeonik font-medium text-sm md:text-base max-w-[200px] md:max-w-lg inline-block md:block">
-          Find the right machine for your next project
+        <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
+          Find the right equipment for construction, mining, oil & gas,
+          agriculture, aggregate, and quarry.
         </p>
       </div>
       <div className="flex flex-wrap gap-6 md:gap-4 justify-between md:justify-center lg:justify-between items-center">

@@ -24,18 +24,14 @@ const Listing = () => {
 
   return (
     <div className="mx-8 overflow-x-auto md:mx-12 xl:mx-auto xl:max-w-6xl">
-      <div className="flex justify-between">
-        <div className="mb-4">
-          <h3 className="font-plex text-xl md:text-2xl lg:text-[40px] capitalize font-semibold lg:mb-4">
-            Recent listing
-          </h3>
-          <p className="text-[#747474] font-aeonik font-medium text-sm md:text-base max-w-[200px] md:max-w-lg inline-block md:block">
-            Check out our recent equipment listing below
-          </p>
-        </div>
-        <div className="hidden md:block">
-          <ButtonBlack name={"see all"} link={"/buy"} showIcon={true} />
-        </div>
+      <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
+        <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
+          Recently Added Equipment
+        </h3>
+        <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
+          Every machine is physically inspected and includes a downloadable
+          180-point PDF report.
+        </p>
       </div>
 
       <div className="flex flex-col gap-5 mt-12 lg:flex-row">

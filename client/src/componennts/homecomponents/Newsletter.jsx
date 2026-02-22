@@ -51,13 +51,16 @@ const Newsletter = () => {
   return (
     <div className="py-24 mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
       <div className="flex flex-col items-center justify-center">
-        <h3 className="font-plex text-xl md:text-3xl lg:text-[40px] font-semibold mb-2 text-center ">
-          Get Early Access to New Inventory
-        </h3>
-        <p className="text-[#747474] text-sm md:text-base text-center font-aeonik font-medium leading-[27px]">
-          Join the eQuipfy texting list to receive 180-point inspection reports
-          and the best equipment deals before they hit the open market.
-        </p>
+        <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
+          <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
+            Get Early Access to New Inventory
+          </h3>
+          <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
+            Join the eQuipfy texting list to receive 180-point inspection
+            reports and the best equipment deals before they hit the open
+            market.
+          </p>
+        </div>
         <form
           onSubmit={handleSubmit(onSubmitHandler)}
           className="flex flex-col items-center w-full"
