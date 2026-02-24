@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import Hr from "./Hr";
 import Loader from "./Loader";
 import Search from "./Search";
-import { useGetEquipmentsByCategory } from "../api/query";
 
 const nigerianStates = [
   "Abia",
@@ -56,12 +55,6 @@ const BuyCategories = () => {
   const navigate = useNavigate();
   const API_URL = process.env.REACT_APP_BACKEND_URL;
 
-  const {
-    data: equipmentsByCategoryData = [],
-    isLoading: equipmentsByCategoryLoading,
-    error: equipmentsByCategoryError,
-  } = useGetEquipmentsByCategory(category);
-
   useEffect(() => {
     const fetchCategoryData = async () => {
       try {
@@ -96,24 +89,7 @@ const BuyCategories = () => {
       </div>
     );
   } else {
-    result = equipmentsByCategoryData.map((data) => (
-      <div key={data._id} className="h-full w-full sm:w-1/2 md:w-1/3">
-        <BuyCard
-          name={data.name}
-          price={`$${data.price}`}
-          location={
-            nigerianStates[Math.floor(Math.random() * nigerianStates.length)] +
-            ", NIgeria"
-          }
-          hours={data.hours}
-          img1={data.imageUrls[1]}
-          img2={data.imageUrls[2]}
-          img3={data.imageUrls[3]}
-          img5={data.imageUrls[5]}
-          nairaPrice={"#" + data.price * 855}
-        />
-      </div>
-    ));
+    result = "";
   }
   if (price.length > 0) {
     result = price.map((data) => (

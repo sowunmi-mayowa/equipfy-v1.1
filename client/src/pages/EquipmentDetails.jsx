@@ -103,15 +103,16 @@ const EquipmentDetails = () => {
     );
   }
 
-  if (!data?.equipment) {
+  // support both response shapes: { equipment: {...} } and raw equipment object
+  const equipment = data?.equipment ?? data;
+
+  if (!equipment) {
     return (
       <div className="flex justify-center items-center h-screen">
         Equipment not found
       </div>
     );
   }
-
-  const equipment = data.equipment;
   console.log("Equipment details:", equipment?.dimensions);
   const locationText =
     equipment.seller_location || equipment.sold_from || "Unknown";

@@ -3,13 +3,16 @@ const { postEmail } = require("../controllers/emailController");
 const {
   createEquipments,
   getEquipmentsCategory,
-  getEquipmentsByName,
   getEquipmentsByHours,
   getEquipmentsByPrices,
 } = require("../controllers/equipmentController");
 const {
   getEquipments,
   getEquipment,
+  getEquipmentsByCategory,
+  getAllCategories,
+  getAllManufacturers,
+  getEquipmentsByName,
 } = require("../controllers/newEquipmentsController");
 
 const router = express.Router();
@@ -17,10 +20,12 @@ const router = express.Router();
 router.get("/equipments", getEquipments);
 
 router.get("/equipment/:id", getEquipment);
+router.get("/equipments/category/:category", getEquipmentsByCategory);
+router.get("/equipments/categories", getAllCategories);
+router.get("/equipments/manufacturers", getAllManufacturers);
+router.get("/equipments/:name", getEquipmentsByName);
 
 router.get("/byCategory/:type", getEquipmentsCategory);
-
-router.get("/byName/:name", getEquipmentsByName);
 
 router.get("/byHours/:min/:max", getEquipmentsByHours);
 

@@ -1,28 +1,45 @@
 import { useQuery } from "@tanstack/react-query";
 import {
   getAllEquipments,
+  getAllEquipmentsCategories,
+  getAllEquipmentsManufacturers,
   getEquipment,
-  getEquipmentsByCategory,
 } from "./service";
 
-export const useGetAllEquipments = () => {
+export const useGetAllEquipments = (params = {}) => {
   return useQuery({
-    queryKey: ["equipments"],
-    queryFn: getAllEquipments,
+    queryKey: ["equipments", params],
+    queryFn: () => getAllEquipments(params),
+    // keep the query enabled even if params is empty; caller can control
   });
 };
 
-export const useGetEquipmentsByCategory = (type) => {
-  return useQuery({
-    queryKey: ["equipments", type],
-    queryFn: () => getEquipmentsByCategory(type),
-    enabled: !!type, // Only run query if type is provided
-  });
-};
 export const useGetEquipment = (id) => {
   return useQuery({
     queryKey: ["equipment", id],
     queryFn: () => getEquipment(id),
     enabled: !!id, // Only run query if id is provided
+  });
+};
+
+export const useGetAllEquipmentsCategories = () => {
+  return useQuery({
+    queryKey: ["equipmentsCategories"],
+    queryFn: () => getAllEquipmentsCategories(),
+  });
+};
+
+export const useGetAllEquipmentsManufacturers = () => {
+  return useQuery({
+    queryKey: ["equipmentsManufacturers"],
+    queryFn: () => getAllEquipmentsManufacturers(),
+  });
+};
+
+export const useGetEquipmentsByName = (name) => {
+  return useQuery({
+    queryKey: ["equipmentsByName", name],
+    queryFn: () => getEquipmentsByName(name),
+    enabled: !!name,
   });
 };

@@ -21,8 +21,16 @@ import Hr from "../Hr";
 import LazyLoad from "../LazyLoad";
 import { Link } from "react-router-dom";
 import ButtonBlack from "../ButtonBlack";
+import { useGetAllEquipments } from "@/api/query";
+import Loader from "../Loader";
 
 const Categories = () => {
+  const { data: equipments, isLoading } = useGetAllEquipments();
+  const uniqueCategories = equipments
+    ? [...new Set(equipments.map((e) => e.category))]
+    : [];
+  console.log("uniqueCategories", uniqueCategories);
+
   const categories = [
     { image: cat1, alt: "Cold Planner", category: "cold-planner" },
     {
@@ -50,39 +58,56 @@ const Categories = () => {
     { image: cat16, alt: "lifts", category: "lifts" },
   ];
   return (
-    <div className="mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
-      <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
-        <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
-          Browse all Categories
-        </h3>
-        <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
-          Find the right equipment for construction, mining, oil & gas,
-          agriculture, aggregate, and quarry.
-        </p>
-      </div>
-      <div className="flex flex-wrap gap-6 md:gap-4 justify-between md:justify-center lg:justify-between items-center">
-        {categories.slice(0, 8).map(({ image, alt, category }) => (
-          <Link to={`/buy/equipments/${category}`} key={category}>
-            <div className="flex gap-2 text-center lg:gap-5 flex-col items-center justify-center p-8 border-[1px] border-[rgba(116, 116, 116, 0.20)] w-[140px] h-[170px] xs:w-[167px] sm:h-[167px] md:w-[200px] md:h-[200px] xl:w-[265px] xl:h-[265px]">
-              <LazyLoad image={image} alt={alt} />
-              <p className="text-[#121212] font-aeonik text-base md:text-lg font-medium tracking-tighter hover:text-eYellow cursor-pointer capitalize">
-                {alt}
-              </p>
-            </div>
-          </Link>
-        ))}
-      </div>
+    <>
+      {isLoading ? (
+        <div className="flex justify-center items-center h-64">
+          <Loader />
+        </div>
+      ) : (
+        <div className="mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
+          <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
+            <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
+              Browse all Categories
+            </h3>
+            <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
+              Find the right equipment for construction, mining, oil & gas,
+              agriculture, aggregate, and quarry.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-6 md:gap-4 justify-between md:justify-center lg:justify-between items-center">
+            {uniqueCategories.slice(0, 8).map((catSlug, idx) => {
+              const meta = categories.find((c) => c.category === catSlug);
+              const fallback = categories[idx % categories.length];
+              const image = meta?.image || fallback.image;
+              const displayName = catSlug
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, (ch) => ch.toUpperCase());
+              const alt = displayName;
+              return (
+                <Link to={`/buy/${catSlug}`} key={catSlug}>
+                  <div className="flex gap-2 text-center lg:gap-5 flex-col items-center justify-center p-8 border-[1px] border-[rgba(116, 116, 116, 0.20)] w-[140px] h-[170px] xs:w-[167px] sm:h-[167px] md:w-[200px] md:h-[200px] xl:w-[265px] xl:h-[265px]">
+                    <LazyLoad image={image} alt={alt} />
+                    <p className="text-[#121212] font-aeonik text-base md:text-lg font-medium tracking-tighter hover:text-eYellow cursor-pointer">
+                      {displayName}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
 
-      <div className="flex justify-center mt-6 mx-auto">
-        <ButtonBlack
-          name={"See More"}
-          showIcon={true}
-          variant="outlined"
-          link={"/buy"}
-        />
-      </div>
-      <Hr />
-    </div>
+          <div className="flex justify-center mt-6 mx-auto">
+            <ButtonBlack
+              name={"See More"}
+              showIcon={true}
+              variant="outlined"
+              link={"/buy"}
+            />
+          </div>
+          <Hr />
+        </div>
+      )}
+    </>
   );
 };
 
