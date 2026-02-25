@@ -19,6 +19,8 @@ import BuyCategories from "./componennts/BuyCategories";
 import Home from "./componennts/Home";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import EquipmentDetails from "./pages/EquipmentDetails";
+import Services from "./routes/Services";
+import Finance from "./routes/Finance";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +40,8 @@ function App() {
           />
           <Route path="/buy/Kobelco" element={<Kobelco />} />
         </Route>
+        <Route path="/service" element={<Services />} />
+        <Route path="/finance" element={<Finance />} />
         <Route path="/sell" element={<Sell />} />
         <Route path="/loan" element={<Loan />} />
         <Route path="/loan-form" element={<LoanForm />} />
