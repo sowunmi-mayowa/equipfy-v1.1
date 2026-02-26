@@ -21,6 +21,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import EquipmentDetails from "./pages/EquipmentDetails";
 import Services from "./routes/Services";
 import Finance from "./routes/Finance";
+import NewAbout from "./routes/NewAbout";
 
 const queryClient = new QueryClient();
 
@@ -28,7 +29,7 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<NewAbout />} />
         <Route path="/equipment/:id" element={<EquipmentDetails />} />
         <Route path="/" element={<Home />} />
         <Route path="/buy">

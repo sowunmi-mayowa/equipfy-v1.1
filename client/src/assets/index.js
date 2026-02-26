@@ -74,6 +74,12 @@ import Worker from "@/assets/icons/worker.svg";
 import Cubes from "@/assets/icons/cubes.svg";
 import ShieldCheck from "@/assets/icons/shieldCheck.svg";
 import Success from "@/assets/icons/success.svg";
+import Affiliate from "@/assets/icons/affiliate.svg";
+import Emp from "@/assets/icons/emp.svg";
+import Plus from "@/assets/icons/plus.svg";
+import UserGroup from "@/assets/icons/userGroup.svg";
+import XIcon from "@/assets/icons/xIcon.svg";
+import AboutHeroImg from "@/assets/aboutHeroImg.png";
 
 export {
   heroImg,
@@ -152,4 +158,10 @@ export {
   Cubes,
   ShieldCheck,
   Success,
+  Affiliate,
+  Emp,
+  Plus,
+  UserGroup,
+  XIcon,
+  AboutHeroImg,
 };
