@@ -14,8 +14,6 @@ import {
 import * as Tabs from "@radix-ui/react-tabs";
 import Hr from "../componennts/Hr";
 import Footer from "../componennts/Footer";
-import PopupForm from "../componennts/PopupForm";
-import * as Dialog from "@radix-ui/react-dialog";
 import {
   Calendar,
   Weight,
@@ -28,6 +26,16 @@ import {
   Check,
 } from "@/assets/";
 import ButtonBlack from "@/componennts/ButtonBlack";
+import ContactModal from "@/componennts/ContactModal";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
 const EquipmentDetails = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useGetEquipment(id);
@@ -113,7 +121,7 @@ const EquipmentDetails = () => {
       </div>
     );
   }
-  console.log("Equipment details:", equipment?.dimensions);
+
   const locationText =
     equipment.seller_location || equipment.sold_from || "Unknown";
   const images = equipment.all_images || [];
@@ -231,10 +239,23 @@ const EquipmentDetails = () => {
     <div>
       {/* Breadcrumb */}
       <div className=" py-4 mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl ">
-        <p className="text-sm text-[#747474] font-aeonik">
-          Home {">"} Explore Equipment {">"} {equipment.category} {">"}{" "}
-          {equipment.name}
-        </p>
+        <Breadcrumb className="text-sm text-[#747474] font-aeonik">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink render={<a href="/" />}>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/buy" className="capitalize">
+                Explore Equipments
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{equipment.name}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
       </div>
 
       <div className="mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl py-8">
@@ -387,17 +408,7 @@ const EquipmentDetails = () => {
 
             {/* Action Buttons */}
             <div className="space-y-3">
-              <Dialog.Root>
-                <Dialog.Trigger className="w-full bg-eBlack text-white px-4 py-3 font-aeonik font-bold text-sm rounded hover:bg-gray-900 mb-2">
-                  Buy Now
-                </Dialog.Trigger>
-                <Dialog.Portal>
-                  <Dialog.Overlay className="fixed inset-0 backdrop-filter backdrop-blur-sm" />
-                  <Dialog.Content>
-                    <PopupForm />
-                  </Dialog.Content>
-                </Dialog.Portal>
-              </Dialog.Root>
+              <ContactModal equipment={equipment} />
               <ButtonBlack
                 name={"Apply for Loan"}
                 variant={"outlined"}

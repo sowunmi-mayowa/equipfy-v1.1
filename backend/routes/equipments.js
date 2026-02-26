@@ -14,6 +14,7 @@ const {
   getAllManufacturers,
   getEquipmentsByName,
 } = require("../controllers/newEquipmentsController");
+const { createContact } = require("../controllers/contact");
 
 const router = express.Router();
 
@@ -24,6 +25,8 @@ router.get("/equipments/category/:category", getEquipmentsByCategory);
 router.get("/equipments/categories", getAllCategories);
 router.get("/equipments/manufacturers", getAllManufacturers);
 router.get("/equipments/:name", getEquipmentsByName);
+
+router.post("/contact", createContact);
 
 router.get("/byCategory/:type", getEquipmentsCategory);
 

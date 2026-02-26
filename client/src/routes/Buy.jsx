@@ -130,14 +130,19 @@ const Buy = () => {
               </p>
             </div>
           ) : (
-            <div className="flex-1 mt-4 lg:mt-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="flex-1 mt-4 lg:mt-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 w-full">
               {equiptmentsError ? (
                 <div className="flex items-center justify-center w-full text-center">
                   <p className="text-red-400 font-aeonik">{equiptmentsError}</p>
                 </div>
               ) : equiptmentsLoading ? (
-                <div className="flex items-center justify-center w-full text-center">
-                  <Loader />
+                <div className="flex items-center justify-center w-full text-center min-h-[60vh]">
+                  <div>
+                    <Loader />
+                    <p className="text-gray-500 font-aeonik mt-2">
+                      Loading equipments...
+                    </p>
+                  </div>
                 </div>
               ) : (
                 equiptmentsData?.map((equiptment) => (

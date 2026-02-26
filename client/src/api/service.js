@@ -42,3 +42,8 @@ export const getEquipmentsByName = async (name) => {
   const response = await api.get(`/equipments/${name}`);
   return extractData(response);
 };
+
+export const createContact = async (contactData) => {
+  const response = await api.post("/contact", contactData);
+  return extractData(response);
+};
