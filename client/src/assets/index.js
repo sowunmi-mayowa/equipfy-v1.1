@@ -73,6 +73,7 @@ import Notes from "@/assets/icons/notes.svg";
 import Worker from "@/assets/icons/worker.svg";
 import Cubes from "@/assets/icons/cubes.svg";
 import ShieldCheck from "@/assets/icons/shieldCheck.svg";
+import Success from "@/assets/icons/success.svg";
 
 export {
   heroImg,
@@ -150,4 +151,5 @@ export {
   Worker,
   Cubes,
   ShieldCheck,
+  Success,
 };
