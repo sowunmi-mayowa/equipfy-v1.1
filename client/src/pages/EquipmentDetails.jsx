@@ -339,7 +339,7 @@ const EquipmentDetails = () => {
                     alt="Location"
                     className="w-5 h-5 flex-shrink-0"
                   />
-                  <p className="truncate">Location {equipment?.sold_from}</p>
+                  <p className="truncate">Location {locationText}</p>
                 </div>
               </div>
               <div className="grid md:grid-cols-2 text-xs">
