@@ -8,11 +8,13 @@ import Sales from "./homecomponents/Sales";
 import Footer from "./Footer";
 import Parts from "./homecomponents/Parts";
 import Confidence from "./homecomponents/Confidence";
+import HowItWorks from "./homecomponents/HowItWorks";
 
 const About = () => {
   return (
     <div>
       <Hero />
+      <HowItWorks />
       <Confidence />
       {/* <Sales /> */}
       <Categories />

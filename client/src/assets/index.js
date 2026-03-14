@@ -80,6 +80,10 @@ import Plus from "@/assets/icons/plus.svg";
 import UserGroup from "@/assets/icons/userGroup.svg";
 import XIcon from "@/assets/icons/xIcon.svg";
 import AboutHeroImg from "@/assets/aboutHeroImg.png";
+import How1 from "@/assets/how1.png";
+import How2 from "@/assets/how2.png";
+import How3 from "@/assets/how3.png";
+import How4 from "@/assets/how4.png";
 
 export {
   heroImg,
@@ -164,4 +168,8 @@ export {
   UserGroup,
   XIcon,
   AboutHeroImg,
+  How1,
+  How2,
+  How3,
+  How4,
 };
