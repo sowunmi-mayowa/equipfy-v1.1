@@ -52,7 +52,7 @@ const HowItWorks = () => {
           <TabsContent value="explore">
             <div className="flex flex-col md:flex-row items-stretch gap-0">
               {/* Left panel - image */}
-              <div className="px-12 w-full md:mx-0 md:w-1/2 min-h-[280px]  hidden md:block">
+              <div className="px-12 w-full md:mx-0 md:w-1/2 min-h-[280px]">
                 <LazyLoad
                   image={How1}
                   alt="How it works"
@@ -76,7 +76,7 @@ const HowItWorks = () => {
           <TabsContent value="buy">
             <div className="flex flex-col md:flex-row items-stretch gap-0">
               {/* Left panel - image */}
-              <div className="px-12 w-full md:mx-0 md:w-1/2 min-h-[280px]  hidden md:block">
+              <div className="px-12 w-full md:mx-0 md:w-1/2 min-h-[280px]">
                 <LazyLoad
                   image={How2}
                   alt="How it works"
@@ -101,7 +101,7 @@ const HowItWorks = () => {
           <TabsContent value="confirm">
             <div className="flex flex-col md:flex-row-reverse items-stretch gap-0">
               {/* Left panel - image */}
-              <div className="px-12 w-full md:mx-0 md:w-1/2 min-h-[280px]  hidden md:block">
+              <div className="px-12 w-full md:mx-0 md:w-1/2 min-h-[280px]">
                 <LazyLoad
                   image={How3}
                   alt="How it works"
@@ -126,7 +126,7 @@ const HowItWorks = () => {
           <TabsContent value="pickup">
             <div className="flex flex-col md:flex-row items-stretch gap-0">
               {/* Left panel - image */}
-              <div className="px-12 w-full md:mx-0 md:w-1/2 min-h-[280px]  hidden md:block">
+              <div className="px-12 w-full md:mx-0 md:w-1/2 min-h-[280px]">
                 <LazyLoad
                   image={How4}
                   alt="How it works"
