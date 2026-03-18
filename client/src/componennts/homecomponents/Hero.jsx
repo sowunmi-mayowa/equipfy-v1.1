@@ -10,7 +10,7 @@ const Hero = () => {
     <div className="relative">
       <div className="py-4 mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl mt-4">
         <div className="relative">
-          <h1 className="text-eBlack text-2xl md:text-4xl lg:text-5xl xl:text-7xl  font-aeonik text-center relative max-w-5xl mx-auto  italic">
+          <h1 className="text-eBlack text-2xl md:text-4xl lg:text-5xl xl:text-7xl md:max-w-lg lg:max-w-[inherit] font-aeonik text-center relative max-w-5xl mx-auto  italic">
             Buy <span className="font-semibold">foreign-used</span> heavy
             <span className="font-semibold"> equipment</span> with peace of
             mind.
@@ -18,7 +18,7 @@ const Hero = () => {
           <img
             src={stroke}
             alt="yellow stroke"
-            className="hidden lg:block absolute top-12 left-72 xl:w-auto w-32 xl:top-16 xl:left-[400px] "
+            className="absolute top-7 left-24 lg:top-12 md:left-56 lg:left-72 xl:w-auto w-32 xl:top-16 xl:left-[400px] "
           />
         </div>
         <div className="flex justify-center items-center">
@@ -46,7 +46,11 @@ const Hero = () => {
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <LazyLoad image={heroImg} placeholder={lowHeroImg} />
+        <LazyLoad
+          image={heroImg}
+          placeholder={lowHeroImg}
+          alt={"Hero background image"}
+        />
         {/* <img src={heroImg} alt="equiptments" className='w-full h-full' loading='lazy'/> */}
       </div>
       <div className="bg-eYellow mt-8">
@@ -57,8 +61,16 @@ const Hero = () => {
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-8 items-center">
-            <img src={logo1} alt="companies logo" />
-            <img src={logo2} alt="companies logo" />
+            <img
+              src={logo1}
+              alt="companies logo"
+              className="w-full h-[inherit]"
+            />
+            <img
+              src={logo2}
+              alt="companies logo"
+              className="w-full h-[inherit]"
+            />
           </div>
         </div>
       </div>

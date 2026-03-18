@@ -23,17 +23,37 @@ export const getEURtoNGNRate = async () => {
     return cachedRate;
   }
 
+  // add a short timeout so the UI doesn't hang waiting for the remote API
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 8000); // 8s timeout
+
   try {
     const response = await fetch(
       "https://api.frankfurter.app/latest?from=EUR&to=NGN",
+      { signal: controller.signal },
     );
 
-    if (!response.ok) throw new Error("Failed to fetch exchange rate");
+    if (!response.ok) {
+      let body = "<unavailable>";
+      try {
+        body = await response.text();
+      } catch (e) {}
+      console.warn(
+        "Exchange rate fetch failed (non-OK response):",
+        response.status,
+        response.statusText,
+        body,
+      );
+      throw new Error(`HTTP ${response.status} ${response.statusText}`);
+    }
 
     const data = await response.json();
     const rate = data.rates?.NGN;
 
-    if (!rate) throw new Error("NGN rate not found in response");
+    if (!rate) {
+      console.warn("Exchange rate fetch returned unexpected data:", data);
+      throw new Error("NGN rate not found in response");
+    }
 
     // Cache the result
     cachedRate = rate;
@@ -41,11 +61,16 @@ export const getEURtoNGNRate = async () => {
 
     return rate;
   } catch (error) {
-    console.warn(
-      "Exchange rate fetch failed, using fallback rate:",
-      error.message,
-    );
+    if (error.name === "AbortError") {
+      console.warn(
+        "Exchange rate fetch aborted (timeout). Using fallback rate.",
+      );
+    } else {
+      console.warn("Exchange rate fetch failed, using fallback rate:", error);
+    }
     return FALLBACK_RATE;
+  } finally {
+    clearTimeout(timeoutId);
   }
 };
 

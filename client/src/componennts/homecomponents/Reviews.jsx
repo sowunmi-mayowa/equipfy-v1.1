@@ -59,7 +59,7 @@ const Reviews = () => {
       <div>
         <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
           <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
-            What Our Clients are Saying
+            What Our <span className="text-eYellow">Clients</span> are Saying
           </h3>
           <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
             Real stories of transparency and trust from project sites across

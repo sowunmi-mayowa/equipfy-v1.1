@@ -25,13 +25,18 @@ const Listing = () => {
   return (
     <div className="mx-8 overflow-x-auto md:mx-12 xl:mx-auto xl:max-w-6xl">
       <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
-        <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
-          Recently Added Equipment
-        </h3>
-        <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
-          Every machine is physically inspected and includes a downloadable
-          180-point PDF report.
-        </p>
+        <div className="flex justify-between items-center flex-col md:flex-row w-full">
+          <div>
+            <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold bg-gradient-to-r from-black to-yellow-400 text-transparent bg-clip-text inline-block">
+              Recently Added Equipment
+            </h3>
+            <p className="font-light text-gray-500 md:mt-4 text-center mx-auto">
+              Every machine is physically inspected and includes a downloadable
+              180-point PDF report.
+            </p>
+          </div>
+          <ButtonBlack name={"Explore More"} link={"/buy"} showIcon={true} />
+        </div>
       </div>
 
       <div className="flex flex-col gap-5 mt-12 lg:flex-row">

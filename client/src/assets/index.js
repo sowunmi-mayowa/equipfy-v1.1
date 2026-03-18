@@ -1,5 +1,5 @@
-import heroImg from "./heroImg.png";
-import lowHeroImg from "./lowHeroImg.png";
+import heroImg from "./heroImg.webp";
+import lowHeroImg from "./lowHeroImg.webp";
 import logo from "./logo.png";
 import stroke from "./stroke.png";
 import logo1 from "./logo1.png";

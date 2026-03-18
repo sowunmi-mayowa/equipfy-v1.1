@@ -1,11 +1,12 @@
 import React from "react";
 import { PartImg1, PartImg2, PartImg3, Notes, Worker, Cubes } from "@/assets";
 import { FiArrowUpRight } from "react-icons/fi";
+import LazyLoad from "../LazyLoad";
 
 const Parts = () => {
   const categories = [
     {
-      name: "Hard Ware",
+      name: "HardWare",
       info: "Engine, Nuts, Bolts & More",
       id: 1,
       img: PartImg1,
@@ -77,7 +78,10 @@ const Parts = () => {
       <div>
         <div className="flex justify-center items-center flex-col mb-8 gap-2">
           <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
-            Parts Categories
+            Parts{" "}
+            <span className="bg-gradient-to-r from-black/90 to-yellow-400 text-transparent bg-clip-text inline-block">
+              Categories
+            </span>
           </h3>
           <p className="font-light text-gray-500 max-w-xs md:mt-4 text-center mx-auto">
             Browse by category. Order parts or request a technician for your
@@ -87,8 +91,8 @@ const Parts = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {categories.map((category) => (
             <div className="max-w-sm relative">
-              <img
-                src={category.img}
+              <LazyLoad
+                image={category.img}
                 alt="parts and services"
                 className="w-full object-cover "
               />

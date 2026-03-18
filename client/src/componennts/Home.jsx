@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import Parts from "./homecomponents/Parts";
 import Confidence from "./homecomponents/Confidence";
 import HowItWorks from "./homecomponents/HowItWorks";
+import ByJobsite from "./homecomponents/ByJobsite";
 
 const About = () => {
   return (
@@ -16,10 +17,11 @@ const About = () => {
       <Hero />
       <HowItWorks />
       <Confidence />
+      <ByJobsite />
       {/* <Sales /> */}
+      <Listing />
       <Categories />
       <Parts />
-      <Listing />
       <Reviews />
       <Newsletter />
       <Footer />

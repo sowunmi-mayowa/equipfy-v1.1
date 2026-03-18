@@ -40,7 +40,7 @@ const Confidence = () => {
       <div className="md:py-8">
         <div className="mb-16">
           <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
-            <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
+            <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold bg-gradient-to-r from-black to-yellow-400 text-transparent bg-clip-text inline-block">
               Buy with confidence
             </h3>
             <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
