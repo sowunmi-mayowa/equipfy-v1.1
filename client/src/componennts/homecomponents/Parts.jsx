@@ -88,31 +88,33 @@ const Parts = () => {
             machine.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {categories.map((category) => (
-            <div className="max-w-sm relative">
-              <LazyLoad
-                image={category.img}
-                alt="parts and services"
-                className="w-full object-cover "
-              />
-              <div className="absolute top-4 left-4 right-4">
-                <div className="flex justify-between items-center w-full">
-                  <p className="text-xs font-semibold px-3 py-1 bg-white  inline-block rounded-full">
-                    {category.info}
-                  </p>
-                  <div className="bg-white  p-2 rounded-md flex items-center justify-center w-8 h-8">
-                    <FiArrowUpRight className="text-black w-4 h-4" />
+        <div className="flex justify-center items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {categories.map((category) => (
+              <div className="max-w-sm relative">
+                <LazyLoad
+                  image={category.img}
+                  alt="parts and services"
+                  className="w-full object-cover "
+                />
+                <div className="absolute top-4 left-4 right-4">
+                  <div className="flex justify-between items-center w-full">
+                    <p className="text-xs font-semibold px-3 py-1 bg-white  inline-block rounded-full">
+                      {category.info}
+                    </p>
+                    <div className="bg-white  p-2 rounded-md flex items-center justify-center w-8 h-8">
+                      <FiArrowUpRight className="text-black w-4 h-4" />
+                    </div>
                   </div>
                 </div>
+                <div className="absolute bottom-0 left-0">
+                  <h3 className="text-white font-aeonik font-semibold text-2xl pl-4 pb-12">
+                    {category.name}
+                  </h3>
+                </div>
               </div>
-              <div className="absolute bottom-0 left-0">
-                <h3 className="text-white font-aeonik font-semibold text-2xl pl-4 pb-12">
-                  {category.name}
-                </h3>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

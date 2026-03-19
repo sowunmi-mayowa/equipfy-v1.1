@@ -25,12 +25,12 @@ const Listing = () => {
   return (
     <div className="mx-8 overflow-x-auto md:mx-12 xl:mx-auto xl:max-w-6xl">
       <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
-        <div className="flex justify-between items-center flex-col md:flex-row w-full">
+        <div className="flex justify-between items-start gap-6 md:items-center flex-col md:flex-row w-full">
           <div>
             <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold bg-gradient-to-r from-black to-yellow-400 text-transparent bg-clip-text inline-block">
               Recently Added Equipment
             </h3>
-            <p className="font-light text-gray-500 md:mt-4 text-center mx-auto">
+            <p className="font-light text-gray-500 md:mt-4 md:text-center mt-2 mx-auto">
               Every machine is physically inspected and includes a downloadable
               180-point PDF report.
             </p>
