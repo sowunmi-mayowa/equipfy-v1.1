@@ -24,6 +24,12 @@ const QUICK_FILTERS = [
   { label: "Low hours (<2,000)", slug: "low-hours" },
   { label: "Good condition", slug: "condition-good" },
 ];
+const navLinks = [
+  { name: "Buy", link: "/buy" },
+  { name: "Services", link: "/service" },
+  { name: "Finance", link: "/finance" },
+  { name: "About", link: "/about" },
+];
 
 const COUNTRIES = [
   "All Africa",
@@ -313,6 +319,20 @@ const Navbar = () => {
                 </div>
               )}
             </div> */}
+
+            {/* nav links */}
+            <div className="flex flex-col gap-3 mb-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.link}
+                  onClick={closeMenu}
+                  className="text-[13px] font-medium text-[#1A1A1A] no-underline bg-gray-200/70 px-3 py-2 rounded-[4px] hover:bg-gray-200 transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
 
             {/* Quick filters */}
             {!search && (
