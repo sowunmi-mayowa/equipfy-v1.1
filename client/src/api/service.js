@@ -142,3 +142,8 @@ export const createContact = async (contactData) => {
   const response = await api.post("/contact", contactData);
   return extractData(response);
 };
+
+export const getFilterData = async (filter) => {
+  const response = await api.get(`/equipments/quick/${filter}`);
+  return extractData(response);
+};

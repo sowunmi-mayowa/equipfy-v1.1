@@ -4,6 +4,7 @@ import {
   getAllEquipmentsCategories,
   getAllEquipmentsManufacturers,
   getEquipment,
+  getFilterData,
 } from "./service";
 
 export const useGetAllEquipments = (params = {}) => {
@@ -41,5 +42,13 @@ export const useGetEquipmentsByName = (name) => {
     queryKey: ["equipmentsByName", name],
     queryFn: () => getEquipmentsByName(name),
     enabled: !!name,
+  });
+};
+
+export const useGetFilterData = (filter) => {
+  return useQuery({
+    queryKey: ["equipmentsFilterData", filter],
+    queryFn: () => getFilterData(filter),
+    enabled: !!filter,
   });
 };
