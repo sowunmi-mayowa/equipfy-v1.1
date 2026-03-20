@@ -88,7 +88,7 @@ const Categories = () => {
                   .replace(/\b\w/g, (ch) => ch.toUpperCase());
                 const alt = displayName;
                 return (
-                  <Link to={`/buy/${catSlug}`} key={catSlug}>
+                  <Link to={`/buy/?category=${catSlug}`} key={catSlug}>
                     <div className="flex gap-2 text-center lg:gap-5 flex-col items-center justify-center p-8 border-[1px] border-[rgba(116, 116, 116, 0.20)] w-[140px] h-[170px] xs:w-[167px] sm:h-[167px] md:w-[200px] md:h-[200px] xl:w-[265px] xl:h-[265px]">
                       <LazyLoad image={image} alt={alt} />
                       <p className="text-[#121212] font-aeonik text-base md:text-lg font-medium tracking-tighter hover:text-eYellow cursor-pointer">
