@@ -170,12 +170,10 @@ const getEquipmentsByName = async (req, res) => {
     const { name } = req.params;
 
     if (!name || typeof name !== "string") {
-      return res
-        .status(400)
-        .json({
-          success: false,
-          error: "Name is required and must be a string",
-        });
+      return res.status(400).json({
+        success: false,
+        error: "Name is required and must be a string",
+      });
     }
 
     const equipments = await Equipment.find({
@@ -189,6 +187,44 @@ const getEquipmentsByName = async (req, res) => {
   }
 };
 
+// Quick filters endpoint mapping short slugs to queries/sorts
+const getEquipmentsQuick = async (req, res) => {
+  try {
+    const { filter } = req.params;
+    const limit = Math.min(Number(req.query.limit) || 12, 50);
+
+    let query = {};
+    let sort = { createdAt: -1 };
+
+    switch ((filter || "").toString().toLowerCase()) {
+      case "recent":
+        // return most recently added
+        sort = { createdAt: -1 };
+        break;
+      case "low-hours":
+        // low hours below 2000
+        query.hours = { $lte: 2000 };
+        sort = { hours: 1 };
+        break;
+      case "condition-good":
+        // condition field uses enum: Excellent, Good, Fair, Poor
+        query.condition = "Good";
+        sort = { createdAt: -1 };
+        break;
+      default:
+        return res
+          .status(400)
+          .json({ success: false, error: "Unknown quick filter" });
+    }
+
+    const equipments = await Equipment.find(query).sort(sort).limit(limit);
+
+    return res.status(200).json({ success: true, data: equipments });
+  } catch (error) {
+    return res.status(500).json({ success: false, error: error.message });
+  }
+};
+
 module.exports = {
   getEquipments,
   getEquipment,
@@ -196,4 +232,5 @@ module.exports = {
   getAllCategories,
   getAllManufacturers,
   getEquipmentsByName,
+  getEquipmentsQuick,
 };

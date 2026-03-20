@@ -12,6 +12,7 @@ const {
   getEquipmentsByCategory,
   getAllCategories,
   getAllManufacturers,
+  getEquipmentsQuick,
   getEquipmentsByName,
 } = require("../controllers/newEquipmentsController");
 const { createContact } = require("../controllers/contact");
@@ -25,6 +26,9 @@ router.get("/equipments/category/:category", getEquipmentsByCategory);
 router.get("/equipments/categories", getAllCategories);
 router.get("/equipments/manufacturers", getAllManufacturers);
 router.get("/equipments/:name", getEquipmentsByName);
+
+// quick filters: /api/equipments/quick/:filter?limit=12
+router.get("/equipments/quick/:filter", getEquipmentsQuick);
 
 router.post("/contact", createContact);
 
