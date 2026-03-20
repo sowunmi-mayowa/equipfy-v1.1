@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { logo } from "../assets";
 import { Link, NavLink } from "react-router-dom";
-import { FaWhatsapp, FaBars } from "react-icons/fa";
+import { FiArrowUpRight } from "react-icons/fi";
 import { GrFormClose } from "react-icons/gr";
 import { PiPhoneThin } from "react-icons/pi";
 import ButtonBlack from "./ButtonBlack";
@@ -323,14 +323,12 @@ const Navbar = () => {
             {/* nav links */}
             <div className="flex flex-col gap-3 mb-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.link}
-                  onClick={closeMenu}
-                  className="text-[13px] font-medium text-[#1A1A1A] no-underline bg-gray-200/70 px-3 py-2 rounded-[4px] hover:bg-gray-200 transition-colors"
-                >
-                  {link.name}
-                </Link>
+                <div className="flex justify-between text-[13px] font-medium text-[#1A1A1A] no-underline bg-gray-200/70 px-3 py-2 rounded-[4px] hover:bg-gray-200 transition-colors">
+                  <Link key={link.name} to={link.link} onClick={closeMenu}>
+                    {link.name}
+                  </Link>
+                  <FiArrowUpRight />
+                </div>
               ))}
             </div>
 
