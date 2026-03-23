@@ -31,17 +31,11 @@ const Hero = () => {
           </p>
         </div>
         <div className="flex justify-center items-center gap-4">
-          <ButtonBlack
-            name={"buy equipment"}
-            link={"/buy"}
-            showIcon={false}
-            rounded={true}
-          />
+          <ButtonBlack name={"buy equipment"} link={"/buy"} showIcon={false} />
           <ButtonBlack
             name={"request service"}
             variant="outlined"
             showIcon={false}
-            rounded={true}
           />
         </div>
       </div>
