@@ -22,7 +22,7 @@ import EquipmentDetails from "./pages/EquipmentDetails";
 import Services from "./routes/Services";
 import Finance from "./routes/Finance";
 import NewAbout from "./routes/NewAbout";
-
+import ScrollToTop from "./componennts/ScrollToTop";
 const queryClient = new QueryClient();
 
 function App() {
@@ -59,6 +59,7 @@ function App() {
 const Root = () => {
   return (
     <div className="relative">
+      <ScrollToTop />
       <Navbar />
       <Outlet />
       <div className="fixed inline-block p-2 rounded-full bg-eYellow bottom-4 right-4 ">
