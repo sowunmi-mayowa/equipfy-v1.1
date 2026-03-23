@@ -73,7 +73,7 @@ const Newsletter = () => {
             name="text"
             id="email"
             placeholder="Your Email/Phone Number"
-            className="px-4 py-2 bg-[#fafafa] w-full md:w-3/6 my-2 md:mt-6 md:mb-4"
+            className="px-4 py-2 bg-[#fafafa] w-full md:w-3/6 my-2 md:mt-6 md:mb-4 border-2 border-eBlack"
             {...register("email")}
           />
           <p className="text-sm text-center text-red-500 font-aeonik">
