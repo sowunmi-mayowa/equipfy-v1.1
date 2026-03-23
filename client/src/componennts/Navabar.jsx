@@ -104,7 +104,7 @@ const Navbar = () => {
     <>
       {/* ── STICKY HEADER ── */}
       <header className="sticky top-0 z-50 bg-white border-b border-[#F0EEE8] shadow-[0_1px_0_rgba(0,0,0,0.05)] py-2">
-        <div className="flex items-center justify-between h-14 px-4 md:px-8 xl:px-0 xl:max-w-6xl xl:mx-auto">
+        <div className="flex items-center justify-between h-14 mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
           {/* Logo */}
           <Link to="/" onClick={closeMenu} className="flex-shrink-0">
             <img src={logo} alt="eQuipfy" className="h-8 w-auto" />
@@ -113,10 +113,12 @@ const Navbar = () => {
           {/* Desktop nav links — hidden on mobile */}
           <nav className="hidden lg:flex items-center gap-8 font-aeonik">
             {[
+              { name: "Home", link: "/" },
               { name: "Buy", link: "/buy" },
               { name: "Services", link: "/service" },
               { name: "Finance", link: "/finance" },
               { name: "About", link: "/about" },
+              { name: "Call Us: 0812345676899", link: "tel:+2347026701092" },
             ].map((l) => (
               <NavLink
                 key={l.name}
@@ -132,13 +134,13 @@ const Navbar = () => {
 
           {/* Desktop right side */}
           <div className="hidden lg:flex items-center gap-4">
-            <a
+            {/* <a
               href="tel:+2347026701092"
               className="flex items-center gap-2 text-base"
             >
               <PiPhoneThin className="text-xl" />
               <span className="font-medium">+234-702-670-1092</span>
-            </a>
+            </a> */}
             {/* <a
               href="https://wa.me/+2347026701092"
               target="_blank"
