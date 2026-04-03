@@ -84,6 +84,8 @@ import How1 from "@/assets/how1.png";
 import How2 from "@/assets/how2.png";
 import How3 from "@/assets/how3.png";
 import How4 from "@/assets/how4.png";
+import SpareHero from "@/assets/spareHero.webp";
+import PreFooter from "@/assets/preFooter.webp";
 
 export {
   heroImg,
@@ -172,4 +174,6 @@ export {
   How2,
   How3,
   How4,
+  SpareHero,
+  PreFooter,
 };

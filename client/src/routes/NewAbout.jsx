@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   UserGroup,
   Plus,
@@ -48,7 +48,8 @@ const NewAbout = () => {
             About <span className="font-bold italic">eQuipfy</span>
           </h1>
           <p className="font-aeonik text-sm mt-6">
-            West Africa’s Digital Dealer for Foreign-Used Equipment.
+            West Africa's digital dealer for foreign-used equipment, parts, and
+            repairs.
           </p>
         </div>
       </div>
@@ -96,84 +97,106 @@ const NewAbout = () => {
               A message from our founder.
             </p>
           </div>
-          <p className="text-center my-4 font-aeonik text-base ">
-            The idea for eQuipfy started with a single realization: the industry
-            my father spent his life building was broken by a lack of trust.
-            Growing up, I watched him manage his heavy equipment business in
-            Nigeria and struggle with brokers who weren’t honest and machines
-            that didn’t live up to their promises. That same world put me
-            through school. The equipment funded my education. I went on to
-            study computer science and software engineering, and for a long time
-            I asked myself how I could bring those skills back into the industry
-            that made it possible. I wanted to do more than digitize forms. I
-            wanted to drive real efficiency.
-          </p>
-          <p className="text-center my-4 font-aeonik text-base ">
-            In 2019, I decided to digitize his legacy. I wanted to take the
-            business he built with pen and paper and give it the “Uber
-            treatment”. We started with Version 1, which was just manual
-            coordination over WhatsApp and phone calls. It worked, but it didn’t
-            scale. So we built Version 2, a wide-open online marketplace where
-            anyone could list and buy equipment with a click. The reality of the
-            market hit us fast. We learned that in a low-trust environment, an
-            open marketplace becomes a playground for fraud. We saw people
-            tampering with odometers to hide years of wear. We saw them painting
-            over deep mechanical failures for a quick sale. Worst of all, people
-            used our platform to find each other and then took the trade offline
-            to avoid fees.
-          </p>
-          <p className="text-center my-4 font-aeonik text-base ">
-            We pivoted to Version 3, a fully managed model where we vetted every
-            listing and ran the rentals ourselves. We thought that being the
-            middleman would fix it. But we quickly realized that the Nigerian
-            maintenance culture is still developing. Even with our human
-            inspections, machines were breaking down on sites because they
-            weren’t being treated with care. I saw multi-million Naira machines
-            parked on job sites for months, gathering dust and rotting because
-            the owner couldn’t find the right part or a technician they could
-            trust. Whether it is a quarry, a mine, or a government project,
-            downtime is the enemy.
-          </p>
-          <p className="text-center my-4 font-aeonik text-base ">
-            I realized that to protect our customers, I couldn’t just be an app
-            or a middleman. I had to become the source of truth and the entire
-            support system for the machine’s life. That is why eQuipfy has
-            evolved again. We built proprietary diagnostic software that does
-            what the human eye cannot. It catches the odometer fraud and engine
-            tampering that used to slip through the cracks in our previous
-            versions. But I wanted to take it a step further. You know how it
-            works with tricycles and cars: people own the asset, someone else
-            runs it, the owner earns. That model is everywhere here. We brought
-            it to heavy equipment with Own and Earn. And for those who want to
-            run their own fleet, we asked why planning should still mean
-            whiteboards and Excel, or losing track of where your machines are
-            and when they need service. So we added fleet and telematics. One
-            view of your equipment, your sites, your utilisation. The same kind
-            of efficiency that software has brought to other industries, now in
-            yours.
-          </p>
-          <p className="text-center my-4 font-aeonik text-base ">
-            Today we focus on West Africa and on the sectors where demand is
-            real and reliability matters most: construction, mining, oil and
-            gas, agriculture, aggregate, and quarry. We specialise in
-            foreign-used equipment verified by our diagnostic data before it
-            ever hits the yard. We have made it easy to buy used equipment, to
-            source parts and tools, and to request service so that machines
-            don’t rot on site. We offer financing for those who want to own and
-            run their own fleet, and Own and Earn for those who want to own and
-            earn while we deploy and manage. For fleet owners and site managers,
-            we are building the tools to see and manage everything in one place:
-            locations, hours, utilisation, maintenance. No more guesswork
-          </p>
-          <p className="text-center my-4 font-aeonik text-base ">
-            We are building for the contractors in Lagos, Kano, Port Harcourt,
-            and the Delta who are tired of being cheated and of losing money to
-            downtime and disorganisation. eQuipfy is the modern platform for
-            heavy equipment in West Africa because we have lived the problems we
-            are now solving. The equipment funded my education; now I am putting
-            that education back into the industry. We are here so you can
-            finally focus on your business and not the machine.
-          </p>
+          <div className="text-center my-4 font-aeonik text-base space-y-4">
+            <p className="max-w-3xl mx-auto">
+              The industry my father built put me through school. When I came
+              back with a computer science degree, I found it broken by the same
+              problems: dishonest brokers, tampered machines, and no one to call
+              when things broke down. We tried three versions of eQuipfy before
+              we got it right. Today, every machine is verified by our
+              diagnostic software before it hits the yard, every payment is
+              escrow protected, and every buyer gets parts and technician
+              support from day one.
+            </p>
+          </div>
+          <details className="text-center my-4 font-aeonik text-base">
+            <summary className="cursor-pointer text-eBlack">
+              Read the full story
+            </summary>
+            <div className="mt-4 space-y-4 max-w-3xl mx-auto text-left md:text-center">
+              <p>
+                The idea for eQuipfy started with a single realization: the
+                industry my father spent his life building was broken by a lack
+                of trust. Growing up, I watched him manage his heavy equipment
+                business in Nigeria and struggle with brokers who were not
+                honest and machines that did not live up to their promises. That
+                same world put me through school. I went on to study computer
+                science and software engineering, and for a long time I asked
+                myself how I could bring those skills back into the industry
+                that made it possible. I wanted to do more than digitize forms.
+                I wanted to drive real efficiency.
+              </p>
+              <p>
+                In 2019, I decided to digitize his legacy. I wanted to take the
+                business he built with pen and paper and give it the Uber
+                treatment. We started with Version 1, which was just manual
+                coordination over WhatsApp and phone calls. It worked, but it
+                did not scale. So we built Version 2, a wide open online
+                marketplace where anyone could list and buy equipment with a
+                click. The reality of the market hit us fast. We learned that in
+                a low trust environment, an open marketplace becomes a
+                playground for fraud. We saw people tampering with odometers to
+                hide years of wear. We saw them painting over deep mechanical
+                failures for a quick sale. Worst of all, people used our
+                platform to find each other and then took the trade offline to
+                avoid fees.
+              </p>
+              <p>
+                We pivoted to Version 3, a fully managed model where we vetted
+                every listing and ran the rentals ourselves. We thought that
+                being the middleman would fix it. But we quickly realized that
+                the Nigerian maintenance culture is still developing. Even with
+                our human inspections, machines were breaking down on sites
+                because they were not being treated with care. I saw
+                multi-million Naira machines parked on job sites for months,
+                gathering dust and rotting because the owner could not find the
+                right part or a technician they could trust. Whether it is a
+                quarry, a mine, or a government project, downtime is the enemy.
+              </p>
+              <p>
+                I realized that to protect our customers, I could not just be an
+                app or a middleman. I had to become the source of truth and the
+                entire support system for the machine life. That is why eQuipfy
+                has evolved again. We built proprietary diagnostic software that
+                does what the human eye cannot. It catches the odometer fraud
+                and engine tampering that used to slip through the cracks in our
+                previous versions.
+              </p>
+              <p>
+                You know how it works with tricycles and cars: people own the
+                asset, someone else runs it, and the owner earns. That model is
+                everywhere here. We brought it to heavy equipment with Own and
+                Earn. And for those who want to run their own fleet, we asked
+                why planning should still mean whiteboards and Excel, or losing
+                track of where your machines are and when they need service. So
+                we added fleet and telematics. One view of your equipment, your
+                sites, your utilisation. The same kind of efficiency that
+                software has brought to other industries is now in yours.
+              </p>
+              <p>
+                Today we focus on West Africa and on the sectors where demand is
+                real and reliability matters most: construction, mining, oil and
+                gas, agriculture, aggregate, and quarry. We specialise in
+                foreign used equipment that is verified by our diagnostic data
+                before it ever hits the yard. We have made it easy to buy used
+                equipment, to source parts and tools, and to request service so
+                that machines do not rot on site. We offer financing for those
+                who want to own and run their own fleet, and Own and Earn for
+                those who want to own and earn while we deploy and manage. For
+                fleet owners and site managers, we are building the tools to see
+                and manage everything in one place: locations, hours,
+                utilisation, and maintenance. No more guesswork.
+              </p>
+              <p>
+                We are building for the contractors in Lagos, Kano, Port
+                Harcourt, and the Delta who are tired of being cheated and of
+                losing money to downtime and disorganisation. eQuipfy is the
+                modern platform for heavy equipment in West Africa because we
+                have lived the problems we are now solving. We are here so you
+                can finally focus on your business and not the machine.
+              </p>
+            </div>
+          </details>
 
           <div className="flex flex-col justify-center items-center mt-8">
             <img src={alex} alt="founder" className=" rounded-2xl w-[300px]" />

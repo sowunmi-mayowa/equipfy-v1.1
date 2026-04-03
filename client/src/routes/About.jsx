@@ -236,7 +236,6 @@ const About = () => {
       </div>
       <Reviews />
       <Newsletter />
-      <Footer />
     </div>
   );
 };

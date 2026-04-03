@@ -4,31 +4,31 @@ import { folderIcon, dollarIcon, ShieldCheck } from "@/assets";
 const Confidence = () => {
   const services = [
     {
-      title: "Full Transparency",
+      title: "Proprietary Diagnostic Reports",
       desc: [
-        "180-point inspection report",
-        "Verified diagnostic data",
-        " Download and share the pdf with your technical team before you commit",
+        "Our software catches odometer fraud and engine tampering that human inspections miss.",
+        "Verified engine data, hours, and condition scoring in every report.",
+        "Download and share the PDF with your technical team before you commit.",
       ],
       icon: folderIcon,
       id: 1,
     },
     {
-      title: "No hidden cossts",
+      title: "Escrow-Protected Payments",
       desc: [
-        "Secure escrow protection",
-        "Payment released only when condition matches the report",
-        "Clear pricing, no surprise fees",
+        "Your money is held in escrow until the machine's condition matches the report.",
+        "Transport cost included in your quote with no surprise fees.",
+        "Pay via bank transfer or approved payment methods.",
       ],
       icon: dollarIcon,
       id: 2,
     },
     {
-      title: "Quality Assurance",
+      title: "Built for West African Jobsites",
       desc: [
-        "Engine, hydraulics, and condition in every report",
-        "All the facts before you commit your capital",
-        "Built for West African jobsites",
+        "From quarries in Kano to construction sites in Lagos, every machine is verified for real conditions.",
+        "Parts and technician support available from day one.",
+        "Post-delivery support so your machine never sits idle.",
       ],
       icon: ShieldCheck,
       id: 3,
@@ -44,8 +44,8 @@ const Confidence = () => {
               Buy with confidence
             </h3>
             <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
-              Whether you're in construction, mining, oil & gas, agriculture,
-              aggregate, or quarry, get the machine you actually paid for.
+              Diagnostic verified equipment, escrow protected payments, and post
+              delivery support. Get the machine you actually paid for.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">

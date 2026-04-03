@@ -147,3 +147,8 @@ export const getFilterData = async (filter) => {
   const response = await api.get(`/equipments/quick/${filter}`);
   return extractData(response);
 };
+
+export const createPartRequest = async (partRequestData) => {
+  const response = await api.post("/equipment/part-request", partRequestData);
+  return extractData(response);
+};

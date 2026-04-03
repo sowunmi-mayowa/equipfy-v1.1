@@ -204,7 +204,6 @@ const Buy = () => {
         <Hr />
       </div>
       <Newsletter />
-      <Footer />
     </div>
   );
 };

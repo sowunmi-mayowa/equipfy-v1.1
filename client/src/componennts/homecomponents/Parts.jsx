@@ -6,7 +6,7 @@ import LazyLoad from "../LazyLoad";
 const Parts = () => {
   const categories = [
     {
-      name: "HardWare",
+      name: "Hardware",
       info: "Engine, Nuts, Bolts & More",
       id: 1,
       img: PartImg1,
@@ -28,19 +28,19 @@ const Parts = () => {
   const services = [
     {
       name: "Parts Ordering",
-      text: "Simplify parts sourcing for your fleet. We help quarries, mines, and projects get what they need without the usual delays.",
+      text: "Source parts without the usual delays. We stock and ship for quarries, mines, construction, and oil & gas operations across West Africa.",
       icon: Notes,
       id: 1,
     },
     {
       name: "Technician Requests",
-      text: "Request repair and maintenance through eQuipfy. No more machines rotting on site for want of a technician you can trust.",
+      text: "Request verified technicians through the platform. No more multi-million Naira machines sitting idle because you can't find someone you trust.",
       icon: Worker,
       id: 2,
     },
     {
-      name: "Uptime Infrastructure",
-      text: "We're building the support layer so contractors and operators across West Africa can focus on their business, not the machine.",
+      name: "Fleet and Telematics",
+      text: "Track your equipment, hours, utilisation, and maintenance in one view. The same efficiency software brought to other industries is now in yours.",
       icon: Cubes,
       id: 3,
     },
@@ -53,9 +53,8 @@ const Parts = () => {
             Parts & Serivces
           </h3>
           <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
-            End downtime. From quarries and mines to oil & gas and construction
-            sites, order parts and request trusted technicians when you need
-            them.
+            Machines rot on site when you can't find parts or a technician you
+            trust. We fix that.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">

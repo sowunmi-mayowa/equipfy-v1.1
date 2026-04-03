@@ -66,39 +66,34 @@ const Categories = () => {
       ) : (
         <div className="mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
           <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
-            <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold ">
-              Browse all{" "}
-              <span className="bg-gradient-to-r from-black/90 to-yellow-400 text-transparent bg-clip-text inline-block">
-                Categories
-              </span>
+            <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold text-center md:text-left">
+              Find Equipment for Your Sector
             </h3>
             <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
-              Find the right equipment for construction, mining, oil & gas,
-              agriculture, aggregate, and quarry.
+              Whether you run a quarry, a construction site, or an oil and gas
+              operation, browse verified machines by category.
             </p>
           </div>
-          <div className="flex justify-center items-center">
-            <div className="flex flex-wrap gap-6 md:gap-4 justify-center lg:justify-between items-center">
-              {uniqueCategories.slice(0, 8).map((catSlug, idx) => {
-                const meta = categories.find((c) => c.category === catSlug);
-                const fallback = categories[idx % categories.length];
-                const image = meta?.image || fallback.image;
-                const displayName = catSlug
-                  .replace(/-/g, " ")
-                  .replace(/\b\w/g, (ch) => ch.toUpperCase());
-                const alt = displayName;
-                return (
-                  <Link to={`/buy/?category=${catSlug}`} key={catSlug}>
-                    <div className="flex gap-2 text-center lg:gap-5 flex-col items-center justify-center p-8 border-[1px] border-[rgba(116, 116, 116, 0.20)] w-[140px] h-[170px] xs:w-[167px] sm:h-[167px] md:w-[200px] md:h-[200px] xl:w-[265px] xl:h-[265px]">
-                      <LazyLoad image={image} alt={alt} />
-                      <p className="text-[#121212] font-aeonik text-base md:text-lg font-medium tracking-tighter hover:text-eYellow cursor-pointer">
-                        {displayName}
-                      </p>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
+          <div className="flex flex-wrap gap-6 md:gap-4 justify-between md:justify-center lg:justify-between items-center">
+            {uniqueCategories.slice(0, 8).map((catSlug, idx) => {
+              const meta = categories.find((c) => c.category === catSlug);
+              const fallback = categories[idx % categories.length];
+              const image = meta?.image || fallback.image;
+              const displayName = catSlug
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, (ch) => ch.toUpperCase());
+              const alt = displayName;
+              return (
+                <Link to={`/buy/${catSlug}`} key={catSlug}>
+                  <div className="flex gap-2 text-center lg:gap-5 flex-col items-center justify-center p-8 border-[1px] border-[rgba(116, 116, 116, 0.20)] w-[140px] h-[170px] xs:w-[167px] sm:h-[167px] md:w-[200px] md:h-[200px] xl:w-[265px] xl:h-[265px]">
+                    <LazyLoad image={image} alt={alt} />
+                    <p className="text-[#121212] font-aeonik text-base md:text-lg font-medium tracking-tighter hover:text-eYellow cursor-pointer">
+                      {displayName}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
           <div className="flex justify-center mt-6 mx-auto">

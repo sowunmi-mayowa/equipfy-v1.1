@@ -23,6 +23,8 @@ import Services from "./routes/Services";
 import Finance from "./routes/Finance";
 import NewAbout from "./routes/NewAbout";
 import ScrollToTop from "./componennts/ScrollToTop";
+import Sparepart from "./routes/Sparepart";
+import Footer from "./componennts/Footer";
 const queryClient = new QueryClient();
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
         <Route path="/sell" element={<Sell />} />
         <Route path="/loan" element={<Loan />} />
         <Route path="/loan-form" element={<LoanForm />} />
+        <Route path="/spare-part" element={<Sparepart />} />
       </Route>,
     ),
   );
@@ -67,6 +70,7 @@ const Root = () => {
           <FaWhatsapp className="text-4xl cursor-pointer bg-eYellow" />
         </Link>
       </div>
+      <Footer />
     </div>
   );
 };

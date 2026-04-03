@@ -16,15 +16,14 @@ const About = () => {
     <div>
       <Hero />
       <HowItWorks />
+      <Categories />
       <Confidence />
+      <Parts />
+      <Listing />
       <ByJobsite />
       {/* <Sales /> */}
-      <Listing />
-      <Categories />
-      <Parts />
       <Reviews />
       <Newsletter />
-      <Footer />
     </div>
   );
 };

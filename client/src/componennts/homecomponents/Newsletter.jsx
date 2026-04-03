@@ -53,15 +53,15 @@ const Newsletter = () => {
       <div className="flex flex-col items-center justify-center">
         <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
           <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
-            Get Early Access to{" "}
+            Get Verified Listings Before{" "}
             <span className="bg-gradient-to-r from-black/90 to-yellow-400 text-transparent bg-clip-text inline-block">
-              New Inventory
+              Anyone Else
             </span>
           </h3>
           <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
-            Join the eQuipfy texting list to receive 180-point inspection
-            reports and the best equipment deals before they hit the open
-            market.
+            Be first to see new diagnostic reports and equipment drops. Join
+            contractors across West Africa who get deals before they hit the
+            open market.
           </p>
         </div>
         <form

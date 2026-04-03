@@ -59,11 +59,11 @@ const Reviews = () => {
       <div>
         <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
           <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">
-            What Our <span className="text-eYellow">Clients</span> are Saying
+            Trusted Across West Africa
           </h3>
           <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
-            Real stories of transparency and trust from project sites across
-            West Africa.
+            From Port Harcourt to Kano, contractors trust eQuipfy to deliver
+            what was promised.
           </p>
         </div>
         <div className="flex items-center gap-2 justify-end">
@@ -99,7 +99,7 @@ const Reviews = () => {
                 <div className="w-[50px] h-[50px] rounded-full bg-eYellow"></div>
                 <div>
                   <p className="font-medium text-base text-[#121212] leading-[30px]">
-                    — Chidi K.
+                    Chidi K.
                   </p>
                   <p className="text-sm text-[#747474]">Logistics Manager</p>
                 </div>
@@ -117,7 +117,7 @@ const Reviews = () => {
                 <div className="w-[50px] h-[50px] rounded-full bg-eYellow"></div>
                 <div>
                   <p className="font-medium text-base text-[#121212] leading-[30px]">
-                    — Abiola A.
+                    Abiola A.
                   </p>
                   <p className="text-sm text-[#747474]">Site Engineer</p>
                 </div>
@@ -136,7 +136,7 @@ const Reviews = () => {
                 <div className="w-[50px] h-[50px] rounded-full bg-eYellow"></div>
                 <div>
                   <p className="font-medium text-base text-[#121212] leading-[30px]">
-                    — Musa B.
+                    Musa B.
                   </p>
                   <p className="text-sm text-[#747474]">Operations Director</p>
                 </div>
@@ -155,7 +155,7 @@ const Reviews = () => {
                 <div className="w-[50px] h-[50px] rounded-full bg-eYellow"></div>
                 <div>
                   <p className="font-medium text-base text-[#121212] leading-[30px]">
-                    — Chidi K.
+                    Chidi K.
                   </p>
                   <p className="text-sm text-[#747474]">Logistics Manager</p>
                 </div>
@@ -180,7 +180,7 @@ const Reviews = () => {
               <div className="w-[50px] h-[50px] rounded-full bg-eYellow"></div>
               <div>
                 <p className="font-medium text-base text-[#121212] leading-[30px]">
-                  — Chidi K.
+                  Chidi K.
                 </p>
                 <p className="text-sm text-[#747474]">Logistics Manager</p>
               </div>
@@ -198,7 +198,7 @@ const Reviews = () => {
               <div className="w-[50px] h-[50px] rounded-full bg-eYellow"></div>
               <div>
                 <p className="font-medium text-base text-[#121212] leading-[30px]">
-                  — Abiola A.
+                  Abiola A.
                 </p>
                 <p className="text-sm text-[#747474]">Site Engineer</p>
               </div>
@@ -217,7 +217,7 @@ const Reviews = () => {
               <div className="w-[50px] h-[50px] rounded-full bg-eYellow"></div>
               <div>
                 <p className="font-medium text-base text-[#121212] leading-[30px]">
-                  — Musa B.
+                  Musa B.
                 </p>
                 <p className="text-sm text-[#747474]">Operations Director</p>
               </div>
@@ -235,7 +235,7 @@ const Reviews = () => {
               <div className="w-[50px] h-[50px] rounded-full bg-eYellow"></div>
               <div>
                 <p className="font-medium text-base text-[#121212] leading-[30px]">
-                  — Chidi K.
+                  Chidi K.
                 </p>
                 <p className="text-sm text-[#747474]">Logistics Manager</p>
               </div>

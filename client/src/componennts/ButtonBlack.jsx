@@ -12,6 +12,8 @@ const ButtonBlack = ({
   const variantStyles = {
     solid: "text-white bg-eBlack",
     outlined: "text-black bg-transparent border border-black",
+    bgWhite: "text-black bg-white",
+    outlinedWhite: "text-white bg-transparent border border-white",
   };
 
   // support legacy usage variant="rounded" by treating it as rounded shape

@@ -75,12 +75,12 @@ const AutoTabs = ({ delay = 5000 }) => {
             </div>
             <div className="w-full md:w-1/2 bg-gray-100 flex flex-col justify-center p-8 lg:p-12 rounded-2xl">
               <h2 className="text-2xl lg:text-3xl capitalize font-bold font-aeonik mb-4">
-                Find Your Next Machine
+                Browse Verified Equipment
               </h2>
               <p className=" font-plex text-lg leading-relaxed">
-                Browse our catalog using filters or search via the navigation
-                bar. Then carefully check the inspection report and the detailed
-                pictures and videos.
+                Every listing includes a downloadable diagnostic report, not
+                just photos but verified engine data, hours, and condition
+                scoring. Filter by category, price, or sector.
               </p>
             </div>
           </div>
@@ -97,11 +97,12 @@ const AutoTabs = ({ delay = 5000 }) => {
             </div>
             <div className="w-full md:w-1/2 bg-gray-100 flex flex-col justify-center p-8 lg:p-12 rounded-2xl">
               <h2 className="text-2xl lg:text-3xl capitalize font-bold font-aeonik mb-4">
-                Buy Now or Make an Offer
+                Buy, Finance, or Own and Earn
               </h2>
               <p className="font-plex text-lg leading-relaxed">
-                Submit your price to engage with the seller. We will manage the
-                communication and notify you as soon as there is a reaction.
+                Purchase outright, apply for financing, or choose Own and Earn
+                where you own the asset and we deploy and manage it. We handle
+                the entire transaction.
               </p>
             </div>
           </div>
@@ -118,13 +119,13 @@ const AutoTabs = ({ delay = 5000 }) => {
             </div>
             <div className="w-full md:w-1/2 bg-gray-100 flex flex-col justify-center p-8 lg:p-12 rounded-2xl">
               <h2 className="text-2xl lg:text-3xl capitalize font-bold font-aeonik mb-4 max-w-xs">
-                Confirm the order & pay the invoice
+                Secure Payment
               </h2>
               <p className="font-plex text-lg leading-relaxed">
-                Once we reach an agreement between you and the seller you will
-                receive a summary of your order. Upon confirmation we will send
-                you a proforma invoice to be paid using one of our safe payment
-                methods.
+                Your payment is held in escrow and only released when the
+                machine's condition matches the diagnostic report. Pay via bank
+                transfer or approved payment methods. No surprises and no hidden
+                fees.
               </p>
             </div>
           </div>
@@ -141,11 +142,13 @@ const AutoTabs = ({ delay = 5000 }) => {
             </div>
             <div className="w-full md:w-1/2 bg-gray-100 flex flex-col justify-center p-8 lg:p-12 rounded-2xl">
               <h2 className="text-2xl lg:text-3xl capitalize font-bold font-aeonik mb-4 max-w-xs">
-                Receive your equipment
+                Delivered to Your Jobsite
               </h2>
               <p className="font-plex text-lg leading-relaxed">
-                Once we receive your payment we will coordinate the pickup with
-                the seller and inform you of the delivery date.
+                We coordinate logistics and deliver to your site in Lagos, Kano,
+                Port Harcourt, or anywhere across West Africa. Transport cost is
+                included in your quote. From day one you get access to parts and
+                technician support.
               </p>
             </div>
           </div>

@@ -16,6 +16,7 @@ const {
   getEquipmentsByName,
 } = require("../controllers/newEquipmentsController");
 const { createContact } = require("../controllers/contact");
+const { createPartsRequest } = require("../controllers/partsRequest");
 
 const router = express.Router();
 
@@ -26,6 +27,7 @@ router.get("/equipments/category/:category", getEquipmentsByCategory);
 router.get("/equipments/categories", getAllCategories);
 router.get("/equipments/manufacturers", getAllManufacturers);
 router.get("/equipments/:name", getEquipmentsByName);
+router.post("/equipment/part-request", createPartsRequest);
 
 // quick filters: /api/equipments/quick/:filter?limit=12
 router.get("/equipments/quick/:filter", getEquipmentsQuick);
