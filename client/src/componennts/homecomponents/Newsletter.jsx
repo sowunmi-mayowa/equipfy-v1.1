@@ -49,7 +49,7 @@ const Newsletter = () => {
     }
   };
   return (
-    <div className="py-24 mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
+    <div className="mx-8 md:mx-12  xl:mx-auto xl:max-w-6xl py-16">
       <div className="flex flex-col items-center justify-center">
         <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
           <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold">

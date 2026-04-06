@@ -18,7 +18,7 @@ const Hero = () => {
           <img
             src={stroke}
             alt="yellow stroke"
-            className="absolute top-7 left-24 lg:top-12 md:left-56 lg:left-72 xl:w-auto w-32 xl:top-16 xl:left-[400px] "
+            className="absolute top-7 left-40 lg:top-12 md:left-96 lg:left-[500px] xl:w-auto w-32 xl:top-16 xl:left-[600px] "
           />
         </div>
         <div className="flex justify-center items-center">

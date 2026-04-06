@@ -64,9 +64,9 @@ const Categories = () => {
           <Loader />
         </div>
       ) : (
-        <div className="mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
+        <div className="mx-8 md:mx-12  xl:mx-auto xl:max-w-6xl py-16">
           <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
-            <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold text-center md:text-left bg-gradient-to-r from-black to-yellow-400 text-transparent bg-clip-text inline-block">
               Find Equipment for Your Sector
             </h3>
             <p className="font-light text-gray-500 max-w-lg md:mt-4 text-center mx-auto">
@@ -104,7 +104,7 @@ const Categories = () => {
               link={"/buy"}
             />
           </div>
-          <Hr />
+          {/* <Hr /> */}
         </div>
       )}
     </>

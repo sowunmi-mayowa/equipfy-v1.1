@@ -4,7 +4,7 @@ import { cat5, cat3, cat7, cat4, cat6, cat2 } from "@/assets";
 
 const ByJobsite = () => {
   return (
-    <div className="mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl mb-24">
+    <div className="mx-8 md:mx-12  xl:mx-auto xl:max-w-6xl py-16">
       <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
         <h3 className="text-2xl md:text-3xl lg:text-5xl font-aeonik font-bold ">
           Buy by{" "}

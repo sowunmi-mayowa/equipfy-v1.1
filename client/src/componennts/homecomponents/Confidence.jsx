@@ -36,7 +36,7 @@ const Confidence = () => {
   ];
 
   return (
-    <div className="my-16 mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
+    <div className="mx-8 md:mx-12  xl:mx-auto xl:max-w-6xl py-16">
       <div className="md:py-8">
         <div className="mb-16">
           <div className="flex justify-center items-center flex-col mb-8 gap-2 ">

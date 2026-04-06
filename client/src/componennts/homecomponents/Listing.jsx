@@ -23,7 +23,7 @@ const Listing = () => {
   };
 
   return (
-    <div className="mx-8 overflow-x-auto md:mx-12 xl:mx-auto xl:max-w-6xl">
+    <div className="mx-8 md:mx-12  xl:mx-auto xl:max-w-6xl py-16 overflow-x-auto ">
       <div className="flex justify-center items-center flex-col mb-8 gap-2 ">
         <div className="flex justify-between items-start gap-6 md:items-center flex-col md:flex-row w-full">
           <div>
@@ -128,7 +128,7 @@ const Listing = () => {
           ))}
         </div>
       </div>
-      <Hr />
+      {/* <Hr /> */}
     </div>
   );
 };

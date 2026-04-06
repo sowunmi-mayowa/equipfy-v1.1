@@ -11,15 +11,27 @@ const AutoTabs = ({ delay = 5000 }) => {
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    if (paused) return;
-    intervalRef.current = setInterval(() => {
-      setActive((prev) => {
-        const i = tabIds.indexOf(prev);
-        return tabIds[(i + 1) % tabIds.length];
-      });
-    }, delay);
+    // clear any existing interval before (re)creating
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
 
-    return () => clearInterval(intervalRef.current);
+    if (!paused) {
+      intervalRef.current = setInterval(() => {
+        setActive((prev) => {
+          const i = tabIds.indexOf(prev);
+          return tabIds[(i + 1) % tabIds.length];
+        });
+      }, delay);
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
   }, [paused, delay]);
 
   // Clear interval on unmount
@@ -39,27 +51,35 @@ const AutoTabs = ({ delay = 5000 }) => {
           <TabsList className="flex flex-wrap justify-center gap-3 rounded-full bg-transparent p-1 mb-12 md:mb-0">
             <TabsTrigger
               value="explore"
-              className="rounded-full px-5 py-2 text-sm font-semibold border border-yellow-300 bg-white/60 hover:bg-white/80 data-[state=active]:bg-eBlack data-[state=active]:text-white data-[state=active]:shadow-md"
+              className="group rounded-full p-[1px] bg-gradient-to-r from-black to-yellow-400 data-[state=active]:p-0 data-[state=active]:bg-transparent"
             >
-              Explore Equipment
+              <span className="rounded-full px-5 py-2 text-sm font-semibold bg-white hover:bg-gray-100 group-data-[state=active]:bg-eBlack group-data-[state=active]:text-white group-data-[state=active]:shadow-md">
+                Explore Equipment
+              </span>
             </TabsTrigger>
             <TabsTrigger
               value="buy"
-              className="rounded-full px-5 py-2 text-sm font-semibold border border-yellow-300 bg-white/60 hover:bg-white/80 data-[state=active]:bg-eBlack data-[state=active]:text-white data-[state=active]:shadow-md"
+              className="group rounded-full p-[1px] bg-gradient-to-r from-black to-yellow-400 data-[state=active]:p-0 data-[state=active]:bg-transparent"
             >
-              Buy Now
+              <span className="rounded-full px-5 py-2 text-sm font-semibold bg-white hover:bg-gray-100 group-data-[state=active]:bg-eBlack group-data-[state=active]:text-white group-data-[state=active]:shadow-md">
+                Buy Now
+              </span>
             </TabsTrigger>
             <TabsTrigger
               value="confirm"
-              className="rounded-full px-5 py-2 text-sm font-semibold border border-yellow-300 bg-white/60 hover:bg-white/80 data-[state=active]:bg-eBlack data-[state=active]:text-white data-[state=active]:shadow-md"
+              className="group rounded-full p-[1px] bg-gradient-to-r from-black to-yellow-400 data-[state=active]:p-0 data-[state=active]:bg-transparent"
             >
-              Confirm Order
+              <span className="rounded-full px-5 py-2 text-sm font-semibold bg-white hover:bg-gray-100 group-data-[state=active]:bg-eBlack group-data-[state=active]:text-white group-data-[state=active]:shadow-md">
+                Confirm Order
+              </span>
             </TabsTrigger>
             <TabsTrigger
               value="pickup"
-              className="rounded-full px-5 py-2 text-sm font-semibold border border-yellow-300 bg-white/60 hover:bg-white/80 data-[state=active]:bg-eBlack data-[state=active]:text-white data-[state=active]:shadow-md"
+              className="group rounded-full p-[1px] bg-gradient-to-r from-black to-yellow-400 data-[state=active]:p-0 data-[state=active]:bg-transparent"
             >
-              Pickup
+              <span className="rounded-full px-5 py-2 text-sm font-semibold bg-white hover:bg-gray-100 group-data-[state=active]:bg-eBlack group-data-[state=active]:text-white group-data-[state=active]:shadow-md">
+                Pickup
+              </span>
             </TabsTrigger>
           </TabsList>
         </div>
