@@ -5,6 +5,28 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { GrFormClose } from "react-icons/gr";
 import { PiPhoneThin } from "react-icons/pi";
 import ButtonBlack from "./ButtonBlack";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+
+const components = [
+  {
+    title: "Buy Equipment",
+    href: "/buy",
+    description: "",
+  },
+  {
+    title: "Spare parts",
+    href: "/spare-part",
+    description: "",
+  },
+];
 
 const CATEGORIES = [
   { emoji: "🏗", name: "Excavators", slug: "excavators" },
@@ -112,24 +134,72 @@ const Navbar = () => {
 
           {/* Desktop nav links — hidden on mobile */}
           <nav className="hidden lg:flex items-center gap-8 font-aeonik">
-            {[
-              { name: "Home", link: "/" },
-              { name: "Buy", link: "/buy" },
-              { name: "Services", link: "/service" },
-              { name: "Finance", link: "/finance" },
-              { name: "About", link: "/about" },
-              { name: "Call Us: 0812345676899", link: "tel:+2347026701092" },
-            ].map((l) => (
-              <NavLink
-                key={l.name}
-                to={l.link}
-                className={({ isActive }) =>
-                  `text-base font-medium transition-colors ${isActive ? "text-black border-b-black border-b-2" : "  hover:border-b-black hover:border-b-2"}`
-                }
-              >
-                {l.name}
-              </NavLink>
-            ))}
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `text-base font-medium transition-colors ${isActive ? "text-black border-b-black border-b-2" : "  hover:border-b-black hover:border-b-2"}`
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    Buy
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="p-4 min-w-[150px] max-w-md">
+                      <div className="flex flex-col gap-2">
+                        {components.map((c) => (
+                          <Link
+                            key={c.title}
+                            to={c.href}
+                            className="text-[13px] text-[#1A1A1A] hover:underline"
+                          >
+                            {c.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            <NavLink
+              to="/service"
+              className={({ isActive }) =>
+                `text-base font-medium transition-colors ${isActive ? "text-black border-b-black border-b-2" : "  hover:border-b-black hover:border-b-2"}`
+              }
+            >
+              Services
+            </NavLink>
+            <NavLink
+              to="/finance"
+              className={({ isActive }) =>
+                `text-base font-medium transition-colors ${isActive ? "text-black border-b-black border-b-2" : "  hover:border-b-black hover:border-b-2"}`
+              }
+            >
+              Finance
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `text-base font-medium transition-colors ${isActive ? "text-black border-b-black border-b-2" : "  hover:border-b-black hover:border-b-2"}`
+              }
+            >
+              About
+            </NavLink>
+            <a
+              href="tel:+2347026701092"
+              className="text-base font-medium transition-colors hover:border-b-black hover:border-b-2"
+            >
+              Call Us: 0812345676899
+            </a>
           </nav>
 
           {/* Desktop right side */}
