@@ -197,7 +197,7 @@ const BuyCategories = () => {
           onHoursResult={hoursResult}
           onError={handleErrors}
         />
-        <Hr />
+        {/* <Hr /> */}
         {equipmentsByCategoryLoading ? (
           <div className="flex items-center justify-center w-full">
             <Loader />
@@ -214,7 +214,7 @@ const BuyCategories = () => {
           </div>
         )}
 
-        <Hr />
+        {/* <Hr /> */}
       </div>
       <Footer />
     </div>

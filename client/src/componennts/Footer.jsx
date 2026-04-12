@@ -106,7 +106,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <Hr />
+        {/* <Hr /> */}
         <div className="flex items-start md:items-center md:justify-between flex-col gap-4 md:flex-row w-full">
           <p className="text-sm text-[#747474]">&copy; 2026</p>
           {/* <div>

@@ -51,6 +51,7 @@ const navLinks = [
   { name: "Services", link: "/service" },
   { name: "Finance", link: "/finance" },
   { name: "About", link: "/about" },
+  { name: "Spare Parts", link: "/spare-part" },
 ];
 
 const COUNTRIES = [
