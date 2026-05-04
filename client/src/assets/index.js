@@ -86,6 +86,18 @@ import How3 from "@/assets/how3.png";
 import How4 from "@/assets/how4.png";
 import SpareHero from "@/assets/spareHero.webp";
 import PreFooter from "@/assets/preFooter.webp";
+import Hammer from "@/assets/icons/hammer.svg";
+import Car from "@/assets/icons/car.svg";
+import UserSettings from "@/assets/icons/UserSettings.svg";
+import Fuel from "@/assets/icons/fuel.svg";
+import Glass from "@/assets/icons/glass.svg";
+import FIlter from "@/assets/icons/filter.svg";
+import Hose from "@/assets/icons/hose.svg";
+import Rings from "@/assets/icons/rings.svg";
+import Cabs from "@/assets/icons/cabs.svg";
+import Platform from "@/assets/icons/platform.svg";
+import Parts from "@/assets/icons/part.svg";
+import Spanner from "@/assets/icons/spanner.svg";
 
 export {
   heroImg,
@@ -176,4 +188,16 @@ export {
   How4,
   SpareHero,
   PreFooter,
+  Glass,
+  UserSettings,
+  Car,
+  Fuel,
+  Hammer,
+  FIlter,
+  Hose,
+  Rings,
+  Cabs,
+  Platform,
+  Parts,
+  Spanner,
 };

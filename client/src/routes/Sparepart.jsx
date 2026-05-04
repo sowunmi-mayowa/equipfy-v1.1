@@ -1,6 +1,24 @@
 import LazyLoad from "@/componennts/LazyLoad";
 import React, { useState } from "react";
-import { SpareHero, Notes, Worker, Cubes, PreFooter } from "@/assets";
+import {
+  SpareHero,
+  Notes,
+  Worker,
+  Cubes,
+  PreFooter,
+  Hammer,
+  Car,
+  UserSettings,
+  Glass,
+  Fuel,
+  FIlter,
+  Hose,
+  Rings,
+  Cabs,
+  Platform,
+  Parts,
+  Spanner,
+} from "@/assets";
 import ButtonBlack from "@/componennts/ButtonBlack";
 import {
   Field,
@@ -95,6 +113,22 @@ const Sparepart = () => {
   };
   const handleCancelTrack = () => setTrackQuery("");
 
+  // icons to show in the category circles (12 total)
+  const icons = [
+    Car,
+    Fuel,
+    Hammer,
+    Glass,
+    UserSettings,
+    FIlter,
+    Hose,
+    Rings,
+    Parts,
+    Cabs,
+    Platform,
+    Spanner,
+  ];
+
   return (
     <div>
       <div className="mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
@@ -168,8 +202,17 @@ const Sparepart = () => {
       </div>
 
       <div className="flex gap-8 items-center justify-between flex-wrap mt-8 mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="rounded-full w-36 h-36 bg-gray-400"></div>
+        {icons.map((icon, i) => (
+          <div
+            key={i}
+            className="rounded-full w-36 h-36 bg-[#F7F7F6] flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src={icon}
+              alt={`category-${i}`}
+              className="w-12 h-12 object-contain"
+            />
+          </div>
         ))}
       </div>
 
