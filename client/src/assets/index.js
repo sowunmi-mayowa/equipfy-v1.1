@@ -88,7 +88,7 @@ import SpareHero from "@/assets/spareHero.webp";
 import PreFooter from "@/assets/preFooter.webp";
 import Hammer from "@/assets/icons/hammer.svg";
 import Car from "@/assets/icons/car.svg";
-import UserSettings from "@/assets/icons/UserSettings.svg";
+import UserSettings from "@/assets/icons/userSettings.svg";
 import Fuel from "@/assets/icons/fuel.svg";
 import Glass from "@/assets/icons/glass.svg";
 import FIlter from "@/assets/icons/filter.svg";
