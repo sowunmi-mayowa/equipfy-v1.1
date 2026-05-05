@@ -114,19 +114,19 @@ const Sparepart = () => {
   const handleCancelTrack = () => setTrackQuery("");
 
   // icons to show in the category circles (12 total)
-  const icons = [
-    Car,
-    Fuel,
-    Hammer,
-    Glass,
-    UserSettings,
-    FIlter,
-    Hose,
-    Rings,
-    Parts,
-    Cabs,
-    Platform,
-    Spanner,
+  const category = [
+    { name: "Electrical", icon: Car },
+    { name: "Fuel & Hydraulics", icon: Fuel },
+    { name: "Accessories", icon: Hammer },
+    { name: "Glass & Frames", icon: Glass },
+    { name: "Service Kits", icon: UserSettings },
+    { name: "Filter", icon: FIlter },
+    { name: "Hoses & Hose fittings", icon: Hose },
+    { name: "Rings & Seals", icon: Rings },
+    { name: "Undercarriage Parts", icon: Parts },
+    { name: "Cabs & Cover", icon: Cabs },
+    { name: "Work Platform Parts", icon: Platform },
+    { name: "Hardware", icon: Spanner },
   ];
 
   return (
@@ -202,16 +202,18 @@ const Sparepart = () => {
       </div>
 
       <div className="flex gap-8 items-center justify-between flex-wrap mt-8 mx-8 md:mx-12 xl:mx-auto xl:max-w-6xl">
-        {icons.map((icon, i) => (
-          <div
-            key={i}
-            className="rounded-full w-36 h-36 bg-[#F7F7F6] flex items-center justify-center overflow-hidden"
-          >
-            <img
-              src={icon}
-              alt={`category-${i}`}
-              className="w-12 h-12 object-contain"
-            />
+        {category.map((item, i) => (
+          <div key={i} className="flex flex-col items-center gap-2 w-36">
+            <div className="rounded-full w-36 h-36 bg-[#F7F7F6] flex items-center justify-center overflow-hidden">
+              <img
+                src={item.icon}
+                alt={item.name}
+                className="w-12 h-12 object-contain"
+              />
+            </div>
+            <span className="text-sm text-center text-gray-700 font-semibold">
+              {item.name}
+            </span>
           </div>
         ))}
       </div>
